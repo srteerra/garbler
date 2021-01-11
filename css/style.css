@@ -121,13 +121,8 @@ a:visited {
     align-items: center;
 }
 
-.menu-left-section .menu-logo {
-    background-image: url('./img/main-logo.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    width: 50px;
-    height: 50px;
+#logo {
+    width: 180px;
 }
 
 .menu-right-section button:hover {
