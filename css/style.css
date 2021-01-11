@@ -197,3 +197,48 @@ a:visited {
 .main-leftside-info-buttons h5 {
     padding-left: 5%;
 }
+
+.about-information {
+    height: 800px;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+}
+
+.about-information-left {
+
+}
+
+.about-information-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-info-container {
+    width: 80%;
+    height: 60%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 2fr;
+    color: var(--white);
+}
+
+.about-info-subtitle {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.about-info-title {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    padding-left: 40%;
+}
+
+.about-info-paragraph {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    text-align: right;
+}
