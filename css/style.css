@@ -67,7 +67,6 @@ a:visited {
 .menu-container .menu-links-right {
     display: flex;
     justify-content: flex-end;
-    padding-top: 4px;
     margin-right: 4%;
 }
 
@@ -109,20 +108,19 @@ a:visited {
 .menu-container .menu-links-left {
     display: flex;
     justify-content: flex-start;
-    padding-top: 4px;
     padding-left: 10px;
 }
 
-.menu-container .menu-links-left .menu-left-section {
+.menu-container .menu-links-left a {
     display: flex;
-    width: 50px;
     height: auto;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    margin-left: 2%;
 }
 
 #logo {
-    width: 180px;
+    width: 10rem;
 }
 
 .menu-right-section button:hover {
