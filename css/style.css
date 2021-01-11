@@ -4,6 +4,8 @@
     --greenDark2: #4A7F55;
     --greenAlt: #4ac564;
     --greenAlt2: #85E599;
+    --greenAlt3: #12FF67;
+    --white: #FFFFFF;
 }
 
 /* Color Theme Swatches in Hex */
@@ -132,4 +134,58 @@ a:visited {
     outline: none;
     cursor: pointer;
     color: var(--greenAlt);
+}
+
+.main-section {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    width: 100%;
+    height: 700px;
+}
+
+.main-section-leftside {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-section-rightside {
+    background-color: transparent;
+}
+
+.main-leftside-info {
+    width: 70%;
+    height: 60%;
+    display: grid;
+    grid-template-rows: 1fr 1.5fr 1fr;
+    color: var(--white);
+}
+
+.main-leftside-info-title {
+    display: flex;
+    align-items: center;
+}
+
+.main-leftside-info-title h1 {
+    font-size: 44px;
+}
+
+.main-leftside-info-paragraph {
+}
+
+.main-leftside-info-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.main-leftside-info-buttons button {
+    width: 200px;
+    height: 60px;
+    outline: none;
+    border: none;
+    background-color: var(--greenAlt3);
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
 }
