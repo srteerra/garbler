@@ -199,8 +199,8 @@ a:visited {
 }
 
 .about-information {
-    height: 800px;
-    width: 90%;
+    height: 500px;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1.2fr;
 }
@@ -242,4 +242,93 @@ a:visited {
     align-items: flex-start;
     justify-content: flex-end;
     text-align: right;
+}
+
+.second-about-information {
+    height: 700px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+}
+
+.second-about-information-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.second-about-information-right {
+    
+}
+
+.second-about-info-container {
+    width: 80%;
+    height: 60%;
+    display: grid;
+    grid-template-rows: auto 1fr 2fr;
+    color: var(--white);
+}
+
+.second-about-info-subtitle {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: var(--greenAlt);
+}
+
+.second-about-info-title {
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+    padding-right: 40%;
+}
+
+.second-about-info-paragraph {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.cards-section {
+    display: grid;
+    grid-template-rows: .5fr 2fr .5fr;
+    height: 700px;
+    width: 100%;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+}
+
+.cards-title {
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards-subtitle {
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0px 200px 0px 200px;
+}
+
+.card-base {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-info {
+    height: 70%;
+    width: 70%;
+    background-color: var(--white);
+    border-radius: 10%;
 }
