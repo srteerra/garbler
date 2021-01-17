@@ -219,7 +219,7 @@ a:visited {
     width: 80%;
     height: 60%;
     display: grid;
-    grid-template-rows: 1fr 1fr 2fr;
+    grid-template-rows: auto 1fr 2fr;
     color: var(--white);
 }
 
