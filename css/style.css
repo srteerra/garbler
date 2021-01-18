@@ -206,7 +206,12 @@ a:visited {
 }
 
 .about-information-left {
+    display: flex;
+    justify-content: center;
+}
 
+#ab-img {
+    width: 55%;
 }
 
 .about-information-right {
@@ -258,7 +263,12 @@ a:visited {
 }
 
 .second-about-information-right {
-    
+    display: flex;
+    justify-content: center;
+}
+
+#sec-ab-img {
+    width: 55%;
 }
 
 .second-about-info-container {
