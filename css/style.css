@@ -292,15 +292,16 @@ a:visited {
 
 .cards-section {
     display: grid;
-    grid-template-rows: .5fr 2fr .5fr;
+    grid-template-rows: .5fr 1.7fr .5fr;
     height: 700px;
     width: 100%;
 }
 
 .cards-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: minmax(400px, 1fr) minmax(400px, 1fr) minmax(400px, 1fr);
     width: 100%;
+    margin: 0px 10px 0px 0px;
 }
 
 .cards-title {
@@ -320,15 +321,16 @@ a:visited {
 }
 
 .card-base {
-    width: auto;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .card-info {
-    height: 70%;
-    width: 70%;
+    height: 60%;
+    width: 50%;
     background-color: var(--white);
     border-radius: 10%;
+    padding: 10%;
 }
