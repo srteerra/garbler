@@ -4,14 +4,8 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeViewComponent } from './components/home-view/home-view.component';
 
-
 @NgModule({
-  declarations: [
-    HomeViewComponent
-  ],
-  imports: [
-    CommonModule,
-    HomeRoutingModule
-  ]
+	declarations: [HomeViewComponent],
+	imports: [CommonModule, HomeRoutingModule]
 })
-export class HomeModule { }
+export class HomeModule {}
