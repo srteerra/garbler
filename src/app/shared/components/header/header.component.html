@@ -1,1 +1,41 @@
-<p>header works!</p>
+<mat-toolbar color="primary" class="middle-xs">
+	<mat-toolbar-row class="middle-xs">
+		<div class="row between-xs header-row middle-xs">
+			<nav class="row middle-xs">
+				<a routerLink="/home" class="middle-xs">
+					<!-- <img src="../../../../assets/images/logo.png" id="nav-logo" /> -->
+				</a>
+			</nav>
+			<div>
+				<a
+					mat-button
+					routerLink="/home"
+					routerLinkActive="active"
+					class="header-link"
+					>Home</a
+				>
+				<a
+					mat-button
+					routerLink="/products"
+					routerLinkActive="active"
+					class="header-link"
+					>Products</a
+				>
+				<a
+					mat-button
+					routerLink="/about"
+					routerLinkActive="active"
+					class="header-link"
+					>About us</a
+				>
+				<a
+					mat-button
+					routerLink="/contact"
+					routerLinkActive="active"
+					class="header-link"
+					>Contact</a
+				>
+			</div>
+		</div>
+	</mat-toolbar-row>
+</mat-toolbar>
