@@ -11,11 +11,68 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$garbler-primary: mat.define-palette(mat.$green-palette, 900);
-$garbler-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
-// The warn palette is optional (defaults to red).
-$garbler-warn: mat.define-palette(mat.$red-palette);
+$garbler-primary-palette: (
+	50: #DEE9D8,
+	100: #C8DBBD,
+	200: #BED4B0,
+	300: #B3CCA3,
+	400: #A9C596,
+	500: #9EBE89,
+	600: #93B77B,
+	700: #88AF6E,
+	800: #739E57,
+	900: #688F4E,
+	contrast: (
+		50: #000000,
+		100: #000000,
+		200: #000000,
+		300: #000000,
+		400: #000000,
+		500: #ffffff,
+		600: #ffffff,
+		700: #ffffff,
+		800: #ffffff,
+		900: #ffffff,
+		A100: #000000,
+		A200: #000000,
+		A400: #000000,
+		A700: #000000,
+	)
+);
+
+$garbler-secundary-palette: (
+	50: #81B181,
+	100: #74AA74,
+	200: #67A267,
+	300: #5D985D,
+	400: #558B55,
+	500: #4E7E4E,
+	600: #467247,
+	700: #3E653F,
+	800: #365937,
+	900: #2B462C,
+	contrast: (
+		50: #000000,
+		100: #eeeaea,
+		200: #000000,
+		300: #000000,
+		400: #000000,
+		500: #ffffff,
+		600: #ffffff,
+		700: #ffffff,
+		800: #ffffff,
+		900: #ffffff,
+		A100: #000000,
+		A200: #000000,
+		A400: #000000,
+		A700: #000000,
+	)
+);
+
+$garbler-primary: mat.define-palette($garbler-primary-palette, 900);
+$garbler-secundary: mat.define-palette($garbler-secundary-palette, 900);
+$garbler-warn: mat.define-palette(mat.$red-palette, 400);
 
 // Specify Comic Sans as the default font family for all levels
 $garbler-typography: mat.define-typography-config(
@@ -36,8 +93,8 @@ $garbler-typography: mat.define-typography-config(
 $garbler-theme: mat.define-light-theme((
   color: (
     primary: $garbler-primary,
-    accent: $garbler-accent,
-    warn: $garbler-warn,
+    accent: $garbler-secundary,
+    warn: $garbler-warn
   ),
 	typography: $garbler-typography
 ));
