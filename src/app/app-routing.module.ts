@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
+import { ExamplesComponent } from './examples/examples.component';
 
 const routes: Routes = [
 	{
@@ -18,6 +19,10 @@ const routes: Routes = [
 					import('./home/home.module').then((m) => m.HomeModule)
 			}
 		]
+	},
+	{
+		path: 'example',
+		component: ExamplesComponent
 	},
 	{
 		path: '**',
