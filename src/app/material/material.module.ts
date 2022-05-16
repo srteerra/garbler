@@ -14,6 +14,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatListModule } from '@angular/material/list';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
 	declarations: [],
@@ -31,7 +32,8 @@ import { MatListModule } from '@angular/material/list';
 		MatTreeModule,
 		MatFormFieldModule,
 		MatStepperModule,
-		MatListModule
+		MatListModule,
+		MatChipsModule
 	],
 	exports: [
 		MatButtonModule,
@@ -46,7 +48,8 @@ import { MatListModule } from '@angular/material/list';
 		MatTreeModule,
 		MatFormFieldModule,
 		MatStepperModule,
-		MatListModule
+		MatListModule,
+		MatChipsModule
 	]
 })
 export class MaterialModule {}
