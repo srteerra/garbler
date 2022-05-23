@@ -1,0 +1,17 @@
+.container{
+	.left-slide{
+		.left-slide__content{
+			p:nth-child(1){
+				font-weight: bold;
+			}
+		}
+	}
+	.right-side{
+		.right-side__content{
+			img{
+				width: 100%;
+
+			}
+		}
+	}
+}
