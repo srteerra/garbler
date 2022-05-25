@@ -15,3 +15,20 @@
 		}
 	}
 }
+
+.our-team__container{
+	width: 70%;
+	margin: 20px auto;
+	text-align: center;
+	.our-team__header{
+		padding: 0 100px;
+		p{
+			margin: 0 auto;
+		}
+	}
+	.teamates{
+		img{
+			width: 100px;
+		}
+	}
+}
