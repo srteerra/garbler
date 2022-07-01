@@ -25,5 +25,12 @@ footer {
 		grid-template-rows: repeat(2, 1fr);
 		justify-self: end;
 		color: white;
+
+		.notificationCenter__form {
+			.notificationCenter__field {
+				color: white;
+				border: white;
+			}
+		}
 	}
 }
