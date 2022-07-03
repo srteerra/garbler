@@ -1,5 +1,8 @@
 .container{
+	width: 90%;
+	margin: 50px auto;
 	.left-slide{
+		width: 50%;
 		.left-slide__content{
 			p:nth-child(1){
 				font-weight: bold;
@@ -8,9 +11,17 @@
 	}
 	.right-side{
 		.right-side__content{
+			color: rgba(38, 38, 38, 0.5);
 			img{
 				width: 100%;
-
+			}
+			p{
+				text-align: right;
+				font-weight: bold;
+				margin: 10px;
+				a{
+					color:rgba(38, 38, 38, 0.5);
+				}
 			}
 		}
 	}
