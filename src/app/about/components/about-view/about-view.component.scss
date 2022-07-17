@@ -1,96 +1,93 @@
-.container{
+.container {
 	width: 90%;
 	margin: 50px auto;
-	.left-slide{
+	.left-slide {
 		width: 50%;
-		.left-slide__content{
-			p:nth-child(1){
+		.left-slide__content {
+			p:nth-child(1) {
 				font-weight: bold;
 			}
 		}
 	}
-	.right-side{
-		.right-side__content{
+	.right-side {
+		.right-side__content {
 			color: rgba(38, 38, 38, 0.5);
-			img{
+			img {
 				width: 100%;
 			}
-			p{
+			p {
 				text-align: right;
 				font-weight: bold;
 				margin: 10px;
-				a{
-					color:rgba(38, 38, 38, 0.5);
+				a {
+					color: rgba(38, 38, 38, 0.5);
 				}
 			}
 		}
 	}
 }
 
-.our-team__container{
+.our-team__container {
 	width: 70%;
 	margin: 120px auto;
 	text-align: center;
-	.our-team__header{
+	.our-team__header {
 		margin: 24px auto;
 		width: 80%;
-		.title{
+		.title {
 			text-align: center;
 			margin: 20px auto;
 		}
 	}
-	.teamates{
-		img{
+	.teamates {
+		img {
 			width: 100px;
 		}
 	}
 }
 
-.our-story__container{
+.our-story__container {
 	width: 70%;
 	margin: 120px auto;
 	text-align: center;
 }
 
-.values__container{
+.values__container {
 	color: white;
 	width: 90%;
 	margin: 120px auto;
-	.mision__container{
-		
-		.mision{
+	.mision__container {
+		.mision {
 			background-color: #262626;
 			padding: 120px 50px;
 		}
 	}
-	.vision__container{
-		
-		.vision{
-			background-color: #5A5A5A;
+	.vision__container {
+		.vision {
+			background-color: #5a5a5a;
 			padding: 120px 50px;
 			text-align: end;
 		}
 	}
-	.space{
+	.space {
 		height: 100px;
 		width: 100%;
 	}
 }
 
-.deck__container{
+.deck__container {
 	width: 80%;
 	margin: 50px auto;
 	text-align: center;
-	.download-button{
+	.download-button {
 		border-radius: 50px;
 		padding: 5px 30px;
 		margin: 20px 0;
 	}
 }
 
-
 @media (max-width: 768px) {
-	.last{
+	.last {
 		display: none;
 	}
 }
