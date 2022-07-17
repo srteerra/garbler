@@ -29,17 +29,54 @@
 
 .our-team__container{
 	width: 70%;
-	margin: 20px auto;
+	margin: 120px auto;
 	text-align: center;
 	.our-team__header{
-		padding: 0 100px;
-		p{
-			margin: 0 auto;
-		}
+		margin: 24px auto;
+		width: 80%;
+		justify-content: center;
 	}
 	.teamates{
 		img{
 			width: 100px;
+		}
+	}
+}
+
+.our-story__container{
+	width: 70%;
+	margin: 50px auto;
+	text-align: center;
+}
+
+.values__container{
+	color: white;
+	width: 90%;
+	margin: 0 auto;
+	.mision-container{
+		
+		.mision{
+			background-color: #262626;
+			padding: 40px;
+		}
+	}
+
+	.vision-container{
+		
+		.vision{
+			background-color: #5A5A5A;
+			padding: 40px;
+		}
+	}
+
+	.space{
+		height: 100px;
+		width: 100%;
+	}
+
+	@media (max-width: 768px) {
+		.space{
+			display: none;
 		}
 	}
 }
