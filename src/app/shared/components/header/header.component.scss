@@ -1,0 +1,44 @@
+#nav-logo {
+	max-width: 90px;
+}
+
+#navMenu__icon {
+	max-width: 130px;
+}
+
+#navMenu {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.274);
+	overflow: hidden;
+	z-index: 10;
+
+	.navMenu__block {
+		width: 50vw;
+		height: 100vh;
+		padding: 40px 60px;
+		background-color: rgb(45, 45, 45);
+		color: white;
+	}
+
+	.navMenu__title {
+		margin-bottom: 20px;
+	}
+
+	.navMenu__links {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		color: white;
+	}
+}
+
+.nav__container {
+	background-color: transparent;
+	padding: 50px 30px;
+}
+
+.nav__links {
+	display: none;
+}

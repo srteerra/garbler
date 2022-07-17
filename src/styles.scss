@@ -12,6 +12,14 @@ li {
 	list-style: none;
 }
 
+a {
+	text-decoration: none;
+
+	&:visited {
+		color: inherit;
+	}
+}
+
 @media only screen and (min-width: 48em) {
 	.container {
 		width: 46rem !important;
