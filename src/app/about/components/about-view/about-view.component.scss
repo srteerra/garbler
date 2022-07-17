@@ -34,7 +34,10 @@
 	.our-team__header{
 		margin: 24px auto;
 		width: 80%;
-		justify-content: center;
+		.title{
+			text-align: center;
+			margin: 20px auto;
+		}
 	}
 	.teamates{
 		img{
@@ -45,38 +48,49 @@
 
 .our-story__container{
 	width: 70%;
-	margin: 50px auto;
+	margin: 120px auto;
 	text-align: center;
 }
 
 .values__container{
 	color: white;
 	width: 90%;
-	margin: 0 auto;
-	.mision-container{
+	margin: 120px auto;
+	.mision__container{
 		
 		.mision{
 			background-color: #262626;
-			padding: 40px;
+			padding: 120px 50px;
 		}
 	}
-
-	.vision-container{
+	.vision__container{
 		
 		.vision{
 			background-color: #5A5A5A;
-			padding: 40px;
+			padding: 120px 50px;
+			text-align: end;
 		}
 	}
-
 	.space{
 		height: 100px;
 		width: 100%;
 	}
+}
 
-	@media (max-width: 768px) {
-		.space{
-			display: none;
-		}
+.deck__container{
+	width: 80%;
+	margin: 50px auto;
+	text-align: center;
+	.download-button{
+		border-radius: 50px;
+		padding: 5px 30px;
+		margin: 20px 0;
+	}
+}
+
+
+@media (max-width: 768px) {
+	.last{
+		display: none;
 	}
 }
