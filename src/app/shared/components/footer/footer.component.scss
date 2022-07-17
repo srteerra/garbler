@@ -3,11 +3,6 @@ footer {
 	padding: 100px 90px;
 
 	.footer__container {
-		width: 100%;
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1.5fr;
-		grid-template-rows: 1fr;
-
 		ul {
 			padding: 0;
 			margin: 0;
@@ -21,16 +16,28 @@ footer {
 	}
 
 	.footer__notificationCenter {
-		display: grid;
-		grid-template-rows: repeat(2, 1fr);
-		justify-self: end;
 		color: white;
 
 		.notificationCenter__form {
-			.notificationCenter__field {
-				color: white;
-				border: white;
+			display: flex;
+
+			input {
+				padding: 3px 30px;
+				border: none;
+				outline: none;
+				border-radius: 20px;
+			}
+
+			button {
+				padding: 3px 25px;
+				border: none;
+				margin-left: 10px;
+				border-radius: 20px;
 			}
 		}
+	}
+
+	#footer__icon {
+		max-width: 130px;
 	}
 }
