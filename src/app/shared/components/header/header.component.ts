@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
 	navBlock: boolean = false;
 
 	changeNav() {
-		if (window.innerWidth <= 1000) {
+		if (window.innerWidth <= 1250) {
 			this.navResp = true;
 			this.nav = false;
 		} else {

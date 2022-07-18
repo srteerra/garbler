@@ -13,13 +13,46 @@ footer {
 				padding: 5px 0;
 			}
 		}
+
+		.footer__grid {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr 1fr;
+
+			.footer__topside {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				grid-row: 1;
+
+				@media (max-width: 1500px) {
+					grid-template-columns: 1fr 1fr;
+					text-align: center;
+				}
+
+				@media (max-width: 750px) {
+					grid-template-columns: 1fr;
+					text-align: center;
+				}
+			}
+
+			.footer__bottom {
+				grid-row: 2;
+				text-align: center;
+			}
+		}
 	}
 
 	.footer__notificationCenter {
 		color: white;
 
 		.notificationCenter__form {
+			width: 100%;
 			display: flex;
+			justify-content: start;
+
+			@media (max-width: 1500px) {
+				justify-content: center;
+			}
 
 			input {
 				padding: 3px 30px;
