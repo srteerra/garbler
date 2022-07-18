@@ -1,7 +1,11 @@
 @import url('../../../../variables.scss');
 
 #nav-logo {
-	max-width: 90px;
+	max-width: 250px;
+}
+
+#nav-logo-resp {
+	max-width: 80px;
 }
 
 #navMenu__icon {
@@ -60,5 +64,26 @@
 }
 
 .nav__links {
-	display: none;
+	display: flex;
+
+	a {
+		font-size: 0.9em;
+
+		&:not(:first-of-type) {
+			margin-left: 20px;
+		}
+	}
+
+	.nav__button {
+		background-color: #688f4e;
+		padding: 15px 50px;
+		text-align: center;
+		border: none;
+		border-radius: 50px;
+		color: white;
+	}
+
+	.nav__signin {
+		color: #688f4e;
+	}
 }

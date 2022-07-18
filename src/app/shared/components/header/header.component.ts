@@ -5,8 +5,23 @@ import { Component, OnInit } from '@angular/core';
 	templateUrl: './header.component.html',
 	styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
 	constructor() {}
+
+	navResp: boolean = false;
+	nav: boolean = true;
+
+	ngOnInit() {
+		window?.addEventListener('resize', () => {
+			if (window.innerWidth <= 1000) {
+				this.navResp = true;
+				this.nav = false;
+			} else {
+				this.navResp = false;
+				this.nav = true;
+			}
+		});
+	}
 
 	showNavMenu() {
 		var navMenu = document.getElementById('navMenu');
