@@ -17,7 +17,7 @@ footer {
 		.footer__grid {
 			display: grid;
 			grid-template-columns: 1fr;
-			grid-template-rows: 1fr 1fr;
+			grid-template-rows: 1fr auto;
 
 			.footer__topside {
 				display: grid;
@@ -33,11 +33,23 @@ footer {
 					grid-template-columns: 1fr;
 					text-align: center;
 				}
+
+				div {
+					margin-bottom: 50px;
+				}
 			}
 
 			.footer__bottom {
 				grid-row: 2;
 				text-align: center;
+
+				@media (min-width: 750px) {
+					margin-top: 50px;
+				}
+
+				#footer__icon {
+					max-width: 100px;
+				}
 			}
 		}
 	}
@@ -68,9 +80,5 @@ footer {
 				border-radius: 20px;
 			}
 		}
-	}
-
-	#footer__icon {
-		max-width: 130px;
 	}
 }
