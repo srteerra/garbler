@@ -1,9 +1,11 @@
+@import url('../../../../variables.scss');
+
 #nav-logo {
 	max-width: 90px;
 }
 
 #navMenu__icon {
-	max-width: 130px;
+	max-width: 100px;
 }
 
 #navMenu {
@@ -31,6 +33,24 @@
 		flex-direction: column;
 		gap: 10px;
 		color: white;
+		margin-bottom: 50px;
+
+		@media (min-width: 650px) {
+			text-align: center;
+		}
+	}
+
+	.navMenu__button {
+		background-color: #4e7e4e;
+		padding: 20px 40px;
+		text-align: center;
+		border: none;
+		border-radius: 50px;
+		font-size: 1.5em;
+	}
+
+	.navMenu__signIn {
+		color: #a5e5a5;
 	}
 }
 

@@ -22,13 +22,23 @@
 				<a routerLink="/contact" routerLinkActive="active" class="header-link"
 					><h1>Contact</h1></a
 				>
+				<a
+					routerLink="/contact"
+					routerLinkActive="active"
+					class="header-link navMenu__button"
+					><strong>Join us!</strong></a
+				>
+				<a routerLink="/contact" routerLinkActive="active" class="header-link"
+					><h3>or just <span class="navMenu__signIn">Sign in</span></h3></a
+				>
 			</div>
-			<div class="row center-xs">
-				<img
-					id="navMenu__icon"
-					src="../../../../assets/logos/white_icon.png"
-					alt=""
-				/>
+			<div class="row bottom-xs center-xs">
+				<a routerLink="/home" routerLinkActive="active" class="header-link"
+					><img
+						id="navMenu__icon"
+						src="../../../../assets/logos/white_icon.png"
+						alt=""
+				/></a>
 			</div>
 		</div>
 	</div>
@@ -36,7 +46,7 @@
 		<mat-toolbar-row class="middle-xs">
 			<div class="row between-xs header-row middle-xs">
 				<nav class="row middle-xs nav__menu">
-					<div>
+					<div class="row bottom-xs">
 						<a routerLink="/home" class="middle-xs">
 							<img
 								src="../../../../assets/logos/primary_icon.png"
@@ -51,7 +61,7 @@
 							>
 						</button>
 					</div>
-					<div class="nav__links">
+					<div class="row nav__links">
 						<a routerLink="/home" routerLinkActive="active" class="header-link"
 							>Home</a
 						>
@@ -63,6 +73,12 @@
 						>
 						<a routerLink="/about" routerLinkActive="active" class="header-link"
 							>About us</a
+						>
+						<a
+							routerLink="/contact"
+							routerLinkActive="active"
+							class="header-link"
+							>Contact</a
 						>
 						<a
 							routerLink="/contact"
