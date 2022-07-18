@@ -10,27 +10,30 @@ export class HeaderComponent implements OnInit {
 
 	navResp: boolean = false;
 	nav: boolean = true;
+	navBlock: boolean = false;
+
+	changeNav() {
+		if (window.innerWidth <= 1000) {
+			this.navResp = true;
+			this.nav = false;
+		} else {
+			this.navResp = false;
+			this.nav = true;
+			this.navBlock = false;
+		}
+	}
 
 	ngOnInit() {
+		this.changeNav();
+
 		window?.addEventListener('resize', () => {
-			if (window.innerWidth <= 1000) {
-				this.navResp = true;
-				this.nav = false;
-			} else {
-				this.navResp = false;
-				this.nav = true;
-			}
+			this.changeNav();
 		});
 	}
 
 	showNavMenu() {
-		var navMenu = document.getElementById('navMenu');
-		if (navMenu !== null) {
-			if (navMenu.style.visibility == 'hidden') {
-				navMenu.style.visibility = 'visible';
-			} else {
-				navMenu.style.visibility = 'hidden';
-			}
+		if (this.navBlock != null) {
+			this.navBlock = !this.navBlock;
 		}
 	}
 }
