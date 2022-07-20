@@ -1,8 +1,8 @@
 FROM node:16
 
-COPY ["package.json", "package-lock.json", "/app/"]
+COPY ["package.json", "package-lock.json", "/usr/src/app/"]
 
-WORKDIR /app
+WORKDIR /usr/src/app/
 
 RUN npm install
 
