@@ -5,8 +5,8 @@ services:
     container_name: garbler
     build: .
     volumes:
-      - .:usr/src
-      - /usr/src/node_modules
+      - .:app
+      - app/node_modules
     ports:
       - '4200:4200'
     command: ng serve
