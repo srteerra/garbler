@@ -6,10 +6,9 @@ WORKDIR /usr/src/app/
 
 RUN npm install
 
-RUN npm install -g @angular/cli@14.0.5
+RUN npm install -g @angular/cli
 
-COPY . .
+COPY [".", "/usr/src/app"]
 
 EXPOSE 4200
 
-CMD [ "ng", "serve" ]
