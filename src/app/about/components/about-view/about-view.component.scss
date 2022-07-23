@@ -1,8 +1,7 @@
-.container {
+.about__container {
 	width: 90%;
 	margin: 50px auto;
 	.left-slide {
-		width: 50%;
 		.left-slide__content {
 			p:nth-child(1) {
 				font-weight: bold;
@@ -25,64 +24,63 @@
 			}
 		}
 	}
-}
+	.our-team__container {
+		width: 70%;
+		margin: 120px auto;
+		text-align: center;
+		.our-team__header {
+			margin: 24px auto;
+			width: 80%;
+			.title {
+				text-align: center;
+				margin: 20px auto;
+			}
+		}
+		.teamates {
+			img {
+				width: 100px;
+			}
+		}
+	}
 
-.our-team__container {
-	width: 70%;
-	margin: 120px auto;
-	text-align: center;
-	.our-team__header {
-		margin: 24px auto;
+	.our-story__container {
+		width: 70%;
+		margin: 220px auto;
+		text-align: center;
+	}
+
+	.values__container {
+		color: white;
+		width: 90%;
+		margin: 120px auto;
+		.mision__container {
+			.mision {
+				background-color: #262626;
+				padding: 120px 50px;
+			}
+		}
+		.vision__container {
+			.vision {
+				background-color: #5a5a5a;
+				padding: 120px 50px;
+				text-align: end;
+			}
+		}
+		.space {
+			height: 100px;
+			width: 100%;
+		}
+	}
+
+	.deck__container {
 		width: 80%;
-		.title {
-			text-align: center;
-			margin: 20px auto;
+		margin: 50px auto;
+		text-align: center;
+		.download-button {
+			border-radius: 50px;
+			padding: 5px 30px;
+			margin: 20px 0;
 		}
-	}
-	.teamates {
-		img {
-			width: 100px;
-		}
-	}
-}
-
-.our-story__container {
-	width: 70%;
-	margin: 120px auto;
-	text-align: center;
-}
-
-.values__container {
-	color: white;
-	width: 90%;
-	margin: 120px auto;
-	.mision__container {
-		.mision {
-			background-color: #262626;
-			padding: 120px 50px;
-		}
-	}
-	.vision__container {
-		.vision {
-			background-color: #5a5a5a;
-			padding: 120px 50px;
-			text-align: end;
-		}
-	}
-	.space {
-		height: 100px;
-		width: 100%;
-	}
-}
-
-.deck__container {
-	width: 80%;
-	margin: 50px auto;
-	text-align: center;
-	.download-button {
-		border-radius: 50px;
-		padding: 5px 30px;
-		margin: 20px 0;
 	}
 }
 
