@@ -20,6 +20,9 @@
 				margin: 10px;
 				a {
 					color: rgba(38, 38, 38, 0.5);
+					&:hover {
+						color: rgb(53, 53, 66);
+					}
 				}
 			}
 		}
