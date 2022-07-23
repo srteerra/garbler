@@ -5,25 +5,46 @@ html,
 body {
 	height: 100%;
 }
+
 body {
+	padding: 0;
 	margin: 0;
 }
+
 li {
 	list-style: none;
 }
 
-@media only screen and (min-width: 48em) {
-	.container {
-		width: 46rem !important;
+a {
+	text-decoration: none;
+	padding: 0;
+	margin: 0;
+
+	&:visited {
+		color: inherit;
 	}
 }
-@media only screen and (min-width: 62em) {
-	.container {
-		width: 71rem !important;
-	}
+
+h1,
+h2,
+h3,
+h4 {
+	padding: 0;
+	margin: 0;
 }
-@media only screen and (min-width: 75em) {
-	.container {
-		width: 90rem !important;
-	}
-}
+
+// @media only screen and (min-width: 48em) {
+// 	.container {
+// 		width: 46rem !important;
+// 	}
+// }
+// @media only screen and (min-width: 62em) {
+// 	.container {
+// 		width: 71rem !important;
+// 	}
+// }
+// @media only screen and (min-width: 75em) {
+// 	.container {
+// 		width: 90rem !important;
+// 	}
+// }

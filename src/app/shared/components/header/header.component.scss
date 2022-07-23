@@ -1,0 +1,89 @@
+@import url('../../../../variables.scss');
+
+#nav-logo {
+	max-width: 240px;
+}
+
+#nav-logo-resp {
+	max-width: 80px;
+}
+
+#navMenu__icon {
+	max-width: 100px;
+}
+
+#navMenu {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.274);
+	overflow: hidden;
+	z-index: 10;
+
+	.navMenu__block {
+		width: 50vw;
+		height: 100vh;
+		padding: 40px 60px;
+		background-color: rgb(45, 45, 45);
+		color: white;
+	}
+
+	.navMenu__title {
+		margin-bottom: 20px;
+	}
+
+	.navMenu__links {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		color: white;
+		margin-bottom: 50px;
+
+		@media (min-width: 650px) {
+			text-align: center;
+		}
+	}
+
+	.navMenu__button {
+		background-color: #4e7e4e;
+		padding: 20px 40px;
+		text-align: center;
+		border: none;
+		border-radius: 50px;
+		font-size: 1.5em;
+	}
+
+	.navMenu__signIn {
+		color: #a5e5a5;
+	}
+}
+
+.nav__container {
+	background-color: transparent;
+	padding: 50px 30px;
+}
+
+.nav__links {
+	display: flex;
+
+	a {
+		font-size: 0.9em;
+
+		&:not(:first-of-type) {
+			margin-left: 20px;
+		}
+	}
+
+	.nav__button {
+		background-color: #688f4e;
+		padding: 15px 50px;
+		text-align: center;
+		border: none;
+		border-radius: 50px;
+		color: white;
+	}
+
+	.nav__signin {
+		color: #688f4e;
+	}
+}

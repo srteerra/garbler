@@ -1,41 +1,101 @@
-<mat-toolbar color="primary" class="middle-xs">
-	<mat-toolbar-row class="middle-xs">
-		<div class="row between-xs header-row middle-xs">
-			<nav class="row middle-xs">
-				<a routerLink="/home" class="middle-xs">
-					<!-- <img src="../../../../assets/images/logo.png" id="nav-logo" /> -->
+<header>
+	<div id="navMenu" *ngIf="navBlock">
+		<div class="navMenu__block">
+			<div class="row end-xs">
+				<a (click)="showNavMenu()">
+					<mat-icon aria-hidden="false" aria-label="Show menu">close</mat-icon>
 				</a>
-			</nav>
-			<div>
-				<a
-					mat-button
-					routerLink="/home"
-					routerLinkActive="active"
-					class="header-link"
-					>Home</a
+			</div>
+			<div class="row navMenu__title">
+				<h1><strong>Menu</strong></h1>
+			</div>
+			<div class="row navMenu__links">
+				<a routerLink="/home" routerLinkActive="active" class="header-link"
+					><h1>Home</h1></a
+				>
+				<a routerLink="/products" routerLinkActive="active" class="header-link"
+					><h1>Products</h1></a
+				>
+				<a routerLink="/about" routerLinkActive="active" class="header-link"
+					><h1>About us</h1></a
+				>
+				<a routerLink="/contact" routerLinkActive="active" class="header-link"
+					><h1>Contact</h1></a
 				>
 				<a
-					mat-button
-					routerLink="/products"
-					routerLinkActive="active"
-					class="header-link"
-					>Products</a
-				>
-				<a
-					mat-button
-					routerLink="/about"
-					routerLinkActive="active"
-					class="header-link"
-					>About us</a
-				>
-				<a
-					mat-button
 					routerLink="/contact"
 					routerLinkActive="active"
-					class="header-link"
-					>Contact</a
+					class="header-link navMenu__button"
+					><strong>Join us!</strong></a
+				>
+				<a routerLink="/contact" routerLinkActive="active" class="header-link"
+					><h3>or just <span class="navMenu__signIn">Sign in</span></h3></a
 				>
 			</div>
+			<div class="row bottom-xs center-xs">
+				<a routerLink="/home" routerLinkActive="active" class="header-link"
+					><img
+						id="navMenu__icon"
+						src="../../../../assets/logos/white_icon.png"
+						alt=""
+				/></a>
+			</div>
 		</div>
-	</mat-toolbar-row>
-</mat-toolbar>
+	</div>
+	<!-- Navbar normal -->
+	<mat-toolbar class="middle-xs nav__container">
+		<mat-toolbar-row class="middle-xs">
+			<div class="col-xs">
+				<a routerLink="/home" class="middle-xs">
+					<img
+						src="../../../../assets/logos/primary_icon.png"
+						id="nav-logo-resp"
+						*ngIf="navResp"
+					/>
+					<img
+						src="../../../../assets/logos/primary_horizontal.png"
+						id="nav-logo"
+						*ngIf="nav"
+					/>
+				</a>
+			</div>
+			<div class="col-xs end-xs" *ngIf="navResp">
+				<button mat-flat-button color="light" (click)="showNavMenu()">
+					<mat-icon aria-hidden="false" aria-label="Show menu">menu</mat-icon>
+				</button>
+			</div>
+			<div class="col-xs end-xs middle-xs nav__links" *ngIf="nav">
+				<div style="margin-right: 40px">
+					<a routerLink="/home" routerLinkActive="active" class="header-link"
+						>Home</a
+					>
+					<a
+						routerLink="/products"
+						routerLinkActive="active"
+						class="header-link"
+						>Products</a
+					>
+					<a routerLink="/about" routerLinkActive="active" class="header-link"
+						>About us</a
+					>
+					<a routerLink="/contact" routerLinkActive="active" class="header-link"
+						>Contact</a
+					>
+				</div>
+				<a
+					routerLink="/signin"
+					routerLinkActive="active"
+					class="header-link nav__signin"
+					>Sign in
+				</a>
+				<span style="margin-left: 15px">or</span>
+				<a
+					routerLink="/signup"
+					routerLinkActive="active"
+					class="header-link nav__button"
+					><strong>Join us!</strong></a
+				>
+			</div>
+		</mat-toolbar-row>
+	</mat-toolbar>
+</header>
