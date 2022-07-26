@@ -1,52 +1,74 @@
+#home__container {
+	width: 100%;
+	max-width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
 .main__container {
 	width: 100%;
-	display: grid;
-	grid-template-rows: 1fr;
-	grid-template-columns: 1fr;
+	max-width: 100%;
 	margin-top: 50px;
+	padding-left: 2em;
+	padding-right: 2em;
+	box-sizing: border-box;
 
-	@media (min-width: 1050px) {
-		grid-template-columns: 1fr 2fr;
-		margin-bottom: 250px;
+	@media (min-width: 500px) {
+		padding-left: 5em;
+		padding-right: 5em;
 	}
 
-	.main__desc {
+	.main__content {
 		width: 100%;
-		margin: auto 0;
+		max-width: 100%;
+		display: grid;
+		grid-template-rows: 1fr;
+		grid-template-columns: 1fr;
 
-		.main__title {
-			margin-bottom: 30px;
+		@media (min-width: 1050px) {
+			grid-template-columns: 1fr 2fr;
+			margin-bottom: 250px;
 		}
 
-		.main__btn {
-			display: flex;
-			justify-content: center;
-			margin: 30px 0;
-			font-size: 1rem;
+		.main__desc {
+			width: 100%;
+			max-width: 100%;
+			margin: auto 0;
 
-			@media (min-width: 500px) {
-				display: block;
+			.main__title {
+				margin-bottom: 30px;
+			}
+
+			.main__btn {
+				display: flex;
+				justify-content: center;
+				margin: 30px 0;
+				font-size: 1rem;
+
+				@media (min-width: 500px) {
+					display: block;
+				}
+			}
+
+			.main__info {
+				font-weight: 200;
+				font-size: 0.7rem;
 			}
 		}
 
-		.main__info {
-			font-weight: 200;
-			font-size: 0.7rem;
-		}
-	}
+		.main__vector {
+			width: 90%;
 
-	.main__vector {
-		width: 100%;
+			@media (min-width: 1050px) {
+				padding-left: 50px;
+			}
 
-		@media (min-width: 1050px) {
-			padding-left: 50px;
-		}
+			.main__vector__img {
+				max-width: 100%;
 
-		.main__vector__img {
-			max-width: 100%;
-
-			@media (max-width: 500px) {
-				display: none;
+				@media (max-width: 500px) {
+					display: none;
+				}
 			}
 		}
 	}
@@ -54,70 +76,94 @@
 
 .whatis__container {
 	width: 100%;
+	max-width: 100%;
 	margin: 150px 0;
-	display: grid;
-	grid-template-rows: 1fr;
-	grid-template-columns: 1fr;
+	padding-left: 2em;
+	padding-right: 2em;
+	box-sizing: border-box;
 
-	@media (min-width: 1050px) {
-		grid-template-columns: 1fr 1fr;
+	@media (min-width: 500px) {
+		padding-left: 5em;
+		padding-right: 5em;
 	}
 
-	.whatis__vector {
-		width: 90%;
-		grid-column: 1;
-		align-self: flex-center;
-		justify-self: center;
-
-		@media (max-width: 1050px) {
-			display: none;
-		}
-
-		@media (min-width: 1400px) {
-			width: 75%;
-		}
-
-		.whatis__vector__img {
-			width: 100%;
-			max-width: 100%;
-		}
-	}
-
-	.whatis__aside {
+	.whatis__content {
 		width: 100%;
-		text-align: center;
-		align-self: flex-center;
-		justify-self: start;
+		max-width: 100%;
+		display: grid;
+		grid-template-rows: 1fr;
+		grid-template-columns: 1fr;
 
 		@media (min-width: 1050px) {
-			width: 70%;
-			padding-left: 50px;
-			text-align: start;
+			grid-template-columns: 1fr 1fr;
 		}
 
-		.whatis__title {
-			margin: 10px auto;
-		}
+		.whatis__vector {
+			width: 90%;
+			grid-column: 1;
+			align-self: flex-center;
+			justify-self: center;
 
-		.whatis__subtitle {
-			margin: 10px auto;
-			font-weight: 700;
-			opacity: 30%;
+			@media (max-width: 1050px) {
+				display: none;
+			}
 
-			@media (min-width: 1050px) {
-				margin: 30px 0;
+			@media (min-width: 1400px) {
+				width: 75%;
+			}
+
+			.whatis__vector__img {
+				width: 100%;
+				max-width: 100%;
 			}
 		}
 
-		.whatis__button {
-			margin: 40px 0;
-			font-size: 1rem;
+		.whatis__aside {
+			width: 100%;
+			max-width: 100%;
+			text-align: center;
+			align-self: flex-center;
+			justify-self: start;
+
+			@media (min-width: 1050px) {
+				width: 70%;
+				padding-left: 50px;
+				text-align: start;
+			}
+
+			.whatis__title {
+				margin: 10px auto;
+			}
+
+			.whatis__subtitle {
+				margin: 10px auto;
+				font-weight: 700;
+				opacity: 30%;
+
+				@media (min-width: 1050px) {
+					margin: 30px 0;
+				}
+			}
+
+			.whatis__button {
+				margin: 40px 0;
+				font-size: 1rem;
+			}
 		}
 	}
 }
 
 .how__container {
+	width: 100%;
 	margin: 150px 0;
+	padding-left: 2em;
+	padding-right: 2em;
+	box-sizing: border-box;
+
+	@media (min-width: 500px) {
+		padding-left: 5em;
+		padding-right: 5em;
+	}
 
 	.how__title {
 		margin: 10px auto;
@@ -129,6 +175,8 @@
 	}
 
 	.how__steps {
+		width: 100%;
+		max-width: 100%;
 		display: grid;
 		grid-template-rows: 1fr;
 		grid-template-columns: 1fr;
@@ -178,58 +226,72 @@
 
 .connected__container {
 	width: 100%;
+	max-width: 100%;
 	margin: 150px 0;
-	display: grid;
-	grid-template-rows: 1fr;
-	grid-template-columns: 1fr;
+	padding-left: 2em;
+	padding-right: 2em;
+	box-sizing: border-box;
 
-	@media (min-width: 1050px) {
-		grid-template-columns: 1fr 1fr;
+	@media (min-width: 500px) {
+		padding-left: 5em;
+		padding-right: 5em;
 	}
 
-	.connected__vector {
-		width: 90%;
-		grid-column: 2;
-		align-self: flex-center;
-		justify-self: center;
-
-		@media (max-width: 1050px) {
-			display: none;
-		}
-
-		@media (min-width: 1400px) {
-			width: 75%;
-		}
-
-		.connected__vector__img {
-			width: 100%;
-			max-width: 100%;
-		}
-	}
-
-	.connected__aside {
+	.connected__content {
 		width: 100%;
 		max-width: 100%;
-		text-align: center;
-		align-self: center;
-		justify-self: center;
+		display: grid;
+		grid-template-rows: 1fr;
+		grid-template-columns: 1fr;
 
 		@media (min-width: 1050px) {
-			width: 70%;
-			text-align: start;
+			grid-template-columns: 1fr 1fr;
 		}
 
-		.connected__title {
-			margin: 10px auto;
+		.connected__vector {
+			width: 90%;
+			grid-column: 2;
+			align-self: center;
+			justify-self: center;
+
+			@media (max-width: 1050px) {
+				display: none;
+			}
+
+			@media (min-width: 1400px) {
+				width: 75%;
+			}
+
+			.connected__vector__img {
+				width: 100%;
+				max-width: 100%;
+			}
 		}
 
-		.connected__subtitle {
-			margin: 10px auto;
-			font-weight: 700;
-			opacity: 30%;
+		.connected__aside {
+			width: 100%;
+			max-width: 100%;
+			text-align: center;
+			align-self: center;
+			justify-self: center;
 
 			@media (min-width: 1050px) {
-				margin: 30px 0;
+				width: 70%;
+				text-align: start;
+			}
+
+			.connected__title {
+				margin: 10px auto;
+			}
+
+			.connected__subtitle {
+				margin: 10px auto;
+				font-weight: 700;
+				opacity: 30%;
+
+				@media (min-width: 1050px) {
+					margin: 30px 0;
+				}
 			}
 		}
 	}
