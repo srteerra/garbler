@@ -41,6 +41,33 @@ h4 {
 	margin: 0;
 }
 
+#info__banner {
+	max-width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #262626;
+	color: white;
+	padding: 70px 60px;
+
+	h1 {
+		margin: 0;
+		padding: 0;
+	}
+
+	.banner__contact__btn {
+		font-size: 1.3em;
+	}
+
+	@media (max-width: 900px) {
+		justify-content: center;
+
+		h1 {
+			display: none;
+		}
+	}
+}
+
 #primary__button {
 	background-color: #688f4e;
 	padding: 15px 50px;
@@ -54,19 +81,3 @@ h4 {
 		background-color: #88aa71;
 	}
 }
-
-// @media only screen and (min-width: 48em) {
-// 	.container {
-// 		width: 46rem !important;
-// 	}
-// }
-// @media only screen and (min-width: 62em) {
-// 	.container {
-// 		width: 71rem !important;
-// 	}
-// }
-// @media only screen and (min-width: 75em) {
-// 	.container {
-// 		width: 90rem !important;
-// 	}
-// }
