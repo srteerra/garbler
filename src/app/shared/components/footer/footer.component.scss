@@ -48,6 +48,10 @@ footer {
 					margin-top: 50px;
 				}
 
+				@media (min-width: 1500px) {
+					text-align: end;
+				}
+
 				#footer__icon {
 					max-width: 100px;
 				}
