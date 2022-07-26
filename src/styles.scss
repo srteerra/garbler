@@ -21,9 +21,14 @@ a {
 	padding: 0;
 	margin: 0;
 	color: inherit;
+	transition: ease-in-out 0.2s;
 
 	&:visited {
 		color: inherit;
+	}
+
+	&:hover {
+		color: #93b77b;
 	}
 }
 
@@ -42,6 +47,11 @@ h4 {
 	border: none;
 	border-radius: 50px;
 	color: white;
+	transition: ease-out 0.3s;
+
+	&:hover {
+		background-color: #88aa71;
+	}
 }
 
 // @media only screen and (min-width: 48em) {
