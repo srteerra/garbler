@@ -57,13 +57,15 @@
 		}
 
 		.main__vector {
-			width: 90%;
+			width: 100%;
+			max-width: 100%;
 
 			@media (min-width: 1050px) {
 				padding-left: 50px;
 			}
 
 			.main__vector__img {
+				width: 100%;
 				max-width: 100%;
 
 				@media (max-width: 500px) {
