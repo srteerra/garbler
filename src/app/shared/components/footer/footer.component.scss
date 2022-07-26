@@ -1,9 +1,13 @@
 footer {
+	width: 100%;
 	background-color: rgb(37, 37, 37);
 	padding: 100px 0px;
 	margin-top: 150px;
 
 	.footer__container {
+		width: 80%;
+		max-width: 100%;
+
 		ul {
 			padding: 0;
 			margin: 0;
@@ -65,21 +69,40 @@ footer {
 
 		.notificationCenter__form {
 			width: 100%;
+			max-width: 100%;
 			display: flex;
 			justify-content: start;
+
+			@media (max-width: 450px) {
+				justify-content: center;
+				flex-direction: column;
+
+				.notificationCenter__input {
+					display: block;
+					height: 30px;
+					padding: 3px 30px;
+				}
+
+				.notificationCenter__submit {
+					width: 100%;
+					display: block;
+					padding: 3px 25px;
+					margin: 10px 0 !important;
+				}
+			}
 
 			@media (max-width: 1500px) {
 				justify-content: center;
 			}
 
-			input {
+			.notificationCenter__input {
 				padding: 3px 30px;
 				border: none;
 				outline: none;
 				border-radius: 20px;
 			}
 
-			button {
+			.notificationCenter__submit {
 				padding: 3px 25px;
 				border: none;
 				margin-left: 10px;
