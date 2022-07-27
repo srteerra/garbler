@@ -10,6 +10,9 @@ body {
 body {
 	padding: 0;
 	margin: 0;
+}
+
+* {
 	box-sizing: border-box;
 }
 
@@ -80,4 +83,16 @@ h4 {
 	&:hover {
 		background-color: #88aa71;
 	}
+}
+
+.active__status {
+	color: #688f4e;
+}
+
+.warning__status {
+	color: #c8c851;
+}
+
+.danger__status {
+	color: #fc6565;
 }
