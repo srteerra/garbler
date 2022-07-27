@@ -27,5 +27,14 @@ export class MapComponent implements OnInit {
 
 		// Add map controls
 		this.map.addControl(new mapboxgl.NavigationControl());
+
+		// disable map rotation using right click + drag
+		this.map.dragRotate.disable();
+
+		// disable map rotation using touch rotation gesture
+		this.map.touchZoomRotate.disableRotation();
+
+		// disable map zoom when using scroll
+		this.map.scrollZoom.disable();
 	}
 }
