@@ -27,6 +27,11 @@ const routes: Routes = [
 				path: 'tracker',
 				loadChildren: () =>
 					import('./tracker/tracker.module').then((m) => m.TrackerModule)
+			},
+			{
+				path: 'contact',
+				loadChildren: () =>
+					import('./contact/contact.module').then((m) => m.ContactModule)
 			}
 		]
 	},

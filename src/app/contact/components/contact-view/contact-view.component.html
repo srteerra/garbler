@@ -1,0 +1,72 @@
+<div class="container">
+	<div class="form__container">
+		<form action="#">
+			<div>
+				<h1 class="mat-display-3"><strong>Contact us</strong></h1>
+				<p class="mat-body">For business or personal reasons.</p>
+			</div>
+			<div class="inputs-secion">
+				<mat-form-field appearance="outline" class="input">
+					<mat-label>Title (the reason of this message)</mat-label>
+					<input
+						matInput
+						placeholder="Enter your title here"
+						[formControl]="msg"
+						required
+						minlength="5"
+					/>
+					<mat-error *ngIf="msg.invalid">{{ getErrorMessage() }}</mat-error>
+				</mat-form-field>
+				<mat-form-field appearance="outline" class="input">
+					<mat-label>Enter your email</mat-label>
+					<input
+						matInput
+						placeholder="pat@example.com"
+						[formControl]="email"
+						required
+					/>
+					<mat-error *ngIf="email.invalid">{{
+						getErrorEmailMessage()
+					}}</mat-error>
+				</mat-form-field>
+				<mat-form-field appearance="outline" class="input">
+					<mat-label>Enter your name</mat-label>
+					<input
+						matInput
+						placeholder="John Smith"
+						[formControl]="msg"
+						required
+						minlength="4"
+					/>
+					<mat-error *ngIf="msg.invalid">{{ getErrorMessage() }}</mat-error>
+				</mat-form-field>
+				<mat-form-field class="input" appearance="outline">
+					<mat-label>Message</mat-label>
+					<textarea
+						[formControl]="text"
+						required
+						minlength="20"
+						matInput
+						placeholder="Enter your message here"
+						rows="5"
+						max
+						class="input"
+					></textarea>
+					<mat-error *ngIf="text.invalid">{{
+						getErrorTextMessage()
+					}}</mat-error>
+				</mat-form-field>
+				<div class="submit-button">
+					<button
+						type="submit"
+						routerLink="/deck"
+						id="primary__button"
+						class="send"
+					>
+						<strong>Send</strong>
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
