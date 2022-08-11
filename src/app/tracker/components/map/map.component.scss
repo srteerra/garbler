@@ -6,9 +6,10 @@
 }
 
 .marker {
-	display: block;
-	border: none;
+	background-image: url('../../../../assets/vectors/aerial-truck.png');
+	background-size: cover;
+	width: 50px;
+	height: 50px;
 	border-radius: 50%;
 	cursor: pointer;
-	padding: 0;
 }
