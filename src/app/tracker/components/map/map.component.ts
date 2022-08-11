@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import * as mapboxgl from 'mapbox-gl';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { Observable } from 'rxjs';
 
 @Component({
 	selector: 'app-map',
@@ -10,18 +12,23 @@ import * as mapboxgl from 'mapbox-gl';
 export class MapComponent implements OnInit {
 	map: mapboxgl.Map | undefined;
 	style = 'mapbox://styles/srteerra/cl62y0dr3001i15my49hw1j8o';
-	lat = 31.63333;
-	lng = -106.39333;
+	lat2 = 31.63333;
+	lng2 = -106.39333;
 
-	constructor() {}
+	position$: Observable<any>;
+
+	constructor(db: AngularFireDatabase) {
+		this.position$ = db.object('truck-1').valueChanges();
+	}
 
 	ngOnInit() {
+		// console.log(this.position);
 		this.map = new mapboxgl.Map({
 			accessToken: environment.mapbox.accessToken,
 			container: 'map',
 			style: this.style,
 			zoom: 13,
-			center: [this.lng, this.lat],
+			center: [this.lng2, this.lat2],
 			attributionControl: false
 		});
 
@@ -36,5 +43,13 @@ export class MapComponent implements OnInit {
 
 		// disable map zoom when using scroll
 		this.map.scrollZoom.disable();
+
+		// Set marker options.
+		let marker = new mapboxgl.Marker({
+			color: '#FFFFFF',
+			draggable: false
+		})
+			.setLngLat([this.lng2, this.lat2])
+			.addTo(this.map);
 	}
 }
