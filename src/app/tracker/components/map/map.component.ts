@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import * as mapboxgl from 'mapbox-gl';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { Observable } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
 	selector: 'app-map',
@@ -12,23 +12,33 @@ import { Observable } from 'rxjs';
 export class MapComponent implements OnInit {
 	map: mapboxgl.Map | undefined;
 	style = 'mapbox://styles/srteerra/cl62y0dr3001i15my49hw1j8o';
-	lat2 = 31.63333;
-	lng2 = -106.39333;
+	lat = 31.63333;
+	lng = -106.39333;
 
 	position$: Observable<any>;
 
-	constructor(db: AngularFireDatabase) {
-		this.position$ = db.object('truck-1').valueChanges();
+	constructor(db: AngularFirestore) {
+		this.position$ = db.collection('truck-1').valueChanges();
+
+		this.position$.subscribe((res) => {
+			console.log(res[0].position._lat);
+			this.lat = res[0].position._lat;
+			console.log(this.lat);
+		});
+
+		this.position$.subscribe((res) => {
+			console.log(res[0].position._long);
+			this.lng = res[0].position._long;
+		});
 	}
 
 	ngOnInit() {
-		// console.log(this.position);
 		this.map = new mapboxgl.Map({
 			accessToken: environment.mapbox.accessToken,
 			container: 'map',
 			style: this.style,
 			zoom: 13,
-			center: [this.lng2, this.lat2],
+			center: [-106.39333, 31.63333],
 			attributionControl: false
 		});
 
@@ -49,7 +59,7 @@ export class MapComponent implements OnInit {
 			color: '#FFFFFF',
 			draggable: false
 		})
-			.setLngLat([this.lng2, this.lat2])
+			.setLngLat([this.lng, this.lat])
 			.addTo(this.map);
 	}
 }
