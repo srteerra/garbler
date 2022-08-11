@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import * as mapboxgl from 'mapbox-gl';
 import { Observable } from 'rxjs';
@@ -9,26 +9,29 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 	templateUrl: './map.component.html',
 	styleUrls: ['./map.component.scss']
 })
-export class MapComponent implements OnInit {
-	map: mapboxgl.Map | undefined;
+export class MapComponent implements OnInit, OnChanges {
+	map!: mapboxgl.Map;
 	style = 'mapbox://styles/srteerra/cl62y0dr3001i15my49hw1j8o';
-	lat = 31.63333;
-	lng = -106.39333;
+	lat = 0;
+	lng = 0;
+	marker!: mapboxgl.Marker;
 
 	position$: Observable<any>;
 
 	constructor(db: AngularFirestore) {
 		this.position$ = db.collection('truck-1').valueChanges();
 
-		this.position$.subscribe((res) => {
-			console.log(res[0].position._lat);
-			this.lat = res[0].position._lat;
-			console.log(this.lat);
+		// Set marker options.
+		this.marker = new mapboxgl.Marker({
+			color: '#FFFFFF',
+			draggable: false
 		});
 
 		this.position$.subscribe((res) => {
-			console.log(res[0].position._long);
+			console.log(res[0].position);
+			this.lat = res[0].position._lat;
 			this.lng = res[0].position._long;
+			this.animateMarker(this.lng, this.lat);
 		});
 	}
 
@@ -54,12 +57,32 @@ export class MapComponent implements OnInit {
 		// disable map zoom when using scroll
 		this.map.scrollZoom.disable();
 
+		this.addMarker();
+	}
+
+	addMarker(): void {
 		// Set marker options.
-		let marker = new mapboxgl.Marker({
+		new mapboxgl.Marker({
 			color: '#FFFFFF',
 			draggable: false
 		})
 			.setLngLat([this.lng, this.lat])
 			.addTo(this.map);
+	}
+
+	animateMarker(lng: number, lat: number) {
+		this.marker.setLngLat([lng, lat]);
+
+		/*
+		Ensure the marker is added to the map.
+		This is safe to call if it's already added.
+		*/
+		this.marker.addTo(this.map);
+	}
+
+	ngOnChanges(changes: SimpleChanges): void {
+		console.log('changes: ', changes);
+
+		this.addMarker();
 	}
 }
