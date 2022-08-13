@@ -14,7 +14,7 @@
 
 #navMenu {
 	width: 100vw;
-	height: 100vh;
+	height: 150vh;
 	position: fixed;
 	background-color: rgba(0, 0, 0, 0.274);
 	overflow: hidden;
@@ -22,7 +22,7 @@
 
 	.navMenu__block {
 		width: 50vw;
-		height: 100vh;
+		height: 150vh;
 		padding: 40px 60px;
 		background-color: rgb(45, 45, 45);
 		color: white;
@@ -74,16 +74,12 @@
 		}
 	}
 
-	.nav__button {
-		background-color: #688f4e;
-		padding: 15px 50px;
-		text-align: center;
-		border: none;
-		border-radius: 50px;
-		color: white;
-	}
-
 	.nav__signin {
 		color: #688f4e;
 	}
+}
+
+.active {
+	font-weight: 700;
+	color: #688f4e;
 }

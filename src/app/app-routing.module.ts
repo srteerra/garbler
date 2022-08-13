@@ -22,6 +22,16 @@ const routes: Routes = [
 				path: 'about',
 				loadChildren: () =>
 					import('./about/about.module').then((m) => m.AboutModule)
+			},
+			{
+				path: 'tracker',
+				loadChildren: () =>
+					import('./tracker/tracker.module').then((m) => m.TrackerModule)
+			},
+			{
+				path: 'contact',
+				loadChildren: () =>
+					import('./contact/contact.module').then((m) => m.ContactModule)
 			}
 		]
 	},
