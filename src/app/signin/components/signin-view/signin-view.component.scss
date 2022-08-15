@@ -1,0 +1,116 @@
+.side-img{
+  width:100%;
+  height:100%;
+  background-repeat:no-repeat;
+  background-size: cover;
+
+}
+.signin-container {
+	margin: 0;
+  display: flex;
+	font-family: Poppins;
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 30px;
+	letter-spacing: 0em;
+	text-align: left;
+
+}
+
+.div-left {
+	float: left;
+  flex: 50%;
+}
+
+.div-right {
+	float: right;
+ 	flex: 50%;
+}
+
+.div-login{
+	padding-top: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.div-back-arrow{
+	display: flex;
+	padding: 5%;
+	align-items: center;
+	height: 100px;
+		p{
+			margin-left: 10px;
+		}
+		.div-left-arrow{
+			padding: 0;
+			margin: 0;
+		}
+}
+
+
+.log-label{
+	font-family: Poppins;
+	font-size: 64px;
+	font-weight: 700;
+	line-height: 96px;
+
+}
+
+.div-label{
+ padding-left: 17%;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+::ng-deep .mat-form-field-outline-start {
+  border-radius: 22.5px 0 0 22.5px !important;
+  min-width: 22.5px !important;
+
+}
+
+::ng-deep .mat-form-field-outline-end {
+  border-radius: 0 22.5px 22.5px 0 !important;
+}
+
+.button-row {
+  display: table-cell;
+  width: 490px;
+}
+
+.button-row .mat-button-base {
+  margin: 8px 8px 8px 0;
+	border-radius: 9px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+.mat-raised-button{
+	border-radius: 22.5px !important;
+}
+
+.back-arrow{
+	width: 20px;
+	height: 20px;
+}
+
+
+.div-logo{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.img-logo{
+	width:80%;
+  height:80%;
+  background-repeat:no-repeat;
+  background-size: cover;
+}
+
