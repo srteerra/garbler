@@ -1,14 +1,20 @@
+<<<<<<< HEAD
 /* You can add global styles to this file, and also import other style files */
 @import 'theme.scss';
 
 html,
 body {
-	height: 100%;
+	padding: 0;
+	margin: 0;
 }
 
 body {
 	padding: 0;
 	margin: 0;
+}
+
+* {
+	box-sizing: border-box;
 }
 
 li {
@@ -19,9 +25,15 @@ a {
 	text-decoration: none;
 	padding: 0;
 	margin: 0;
+	color: inherit;
+	transition: ease-in-out 0.2s;
 
 	&:visited {
 		color: inherit;
+	}
+
+	&:hover {
+		color: #93b77b;
 	}
 }
 
@@ -33,18 +45,65 @@ h4 {
 	margin: 0;
 }
 
-// @media only screen and (min-width: 48em) {
-// 	.container {
-// 		width: 46rem !important;
-// 	}
-// }
-// @media only screen and (min-width: 62em) {
-// 	.container {
-// 		width: 71rem !important;
-// 	}
-// }
-// @media only screen and (min-width: 75em) {
-// 	.container {
-// 		width: 90rem !important;
-// 	}
-// }
+#info__banner {
+	max-width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #262626;
+	color: white;
+	padding: 70px 5em;
+
+	h1 {
+		margin: 0;
+		padding: 0;
+	}
+
+	.banner__contact__btn {
+		font-size: 1.3em;
+	}
+
+	@media (max-width: 900px) {
+		justify-content: center;
+
+		h1 {
+			display: none;
+		}
+	}
+}
+
+#primary__button {
+	background-color: #688f4e;
+	padding: 15px 50px;
+	text-align: center;
+	border: none;
+	border-radius: 50px;
+	color: white;
+	transition: ease-out 0.3s;
+
+	&:hover {
+		background-color: #88aa71;
+	}
+}
+
+.active__status {
+	color: #688f4e;
+}
+
+.warning__status {
+	color: #c8c851;
+}
+
+.danger__status {
+	color: #fc6565;
+}
+
+.marker {
+	background-image: url('./assets/vectors/aerial-truck.png');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 70px;
+	height: 70px;
+	cursor: pointer;
+}

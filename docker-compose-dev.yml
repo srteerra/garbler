@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: garbler
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/usr/src/app/
+      - /usr/src/app/node_modules
+    ports:
+      - '4200:4200'
+    mem_limit: 3000m
+    command: >
+      bash -c "npm install && ng serve --host 0.0.0.0 --port 4200 --poll 2000"

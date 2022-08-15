@@ -1,0 +1,109 @@
+.tracker__container {
+	width: 100%;
+	max-width: 100%;
+	margin-top: 50px;
+	padding-left: 2em;
+	padding-right: 2em;
+
+	.tracker__content {
+		width: 100%;
+		max-width: 100%;
+		display: grid;
+		grid-template-rows: 1fr;
+		grid-template-columns: 1fr;
+
+		@media (min-width: 1250px) {
+			grid-template-columns: 1fr 2fr;
+			margin-bottom: 250px;
+		}
+
+		.tracker__aside {
+			width: 100%;
+			max-width: 100%;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 20px;
+
+			.tracker__truck__card {
+				width: 100%;
+				// min-width: 463px;
+				max-width: 415px;
+				display: grid;
+				grid-template-rows: 1fr;
+				grid-template-columns: 1fr;
+				padding: 3em 3.5em;
+				background-color: white;
+				box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+				border: none;
+				border-radius: 30px;
+
+				@media (min-width: 600px) {
+					max-width: 500px;
+					grid-template-rows: 1fr;
+					grid-template-columns: 1fr 1fr;
+				}
+
+				@media (min-width: 750px) {
+					padding: 3em 3.5em;
+				}
+
+				@media (min-width: 900px) {
+					max-width: 370px;
+				}
+
+				@media (min-width: 1100px) {
+					max-width: 480px;
+				}
+
+				@media (min-width: 1250px) {
+					min-width: 450px;
+				}
+
+				.truck__vector__container {
+					width: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+
+					@media (min-width: 600px) {
+						grid-row: 1;
+						grid-column: 2;
+					}
+
+					.truck__vector {
+						max-width: 80%;
+
+						@media (max-width: 600px) {
+							max-width: 70%;
+						}
+					}
+				}
+
+				.truck__info__container {
+					width: 100%;
+
+					@media (min-width: 600px) {
+						grid-row: 1;
+						grid-column: 1;
+					}
+				}
+			}
+		}
+
+		.tracker__map {
+			width: 100%;
+			max-width: 100%;
+			height: 700px;
+			max-height: 700px;
+			padding: 0 3em;
+			margin-top: 50px;
+
+			@media (min-width: 1250px) {
+				height: 100%;
+				max-height: 100%;
+				margin-top: 0;
+			}
+		}
+	}
+}

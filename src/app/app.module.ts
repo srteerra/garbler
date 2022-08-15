@@ -6,11 +6,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SigninViewComponent } from './signin/components/signin-view/signin-view.component';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
 
 @NgModule({
 	declarations: [AppComponent, LayoutComponent],
-	imports: [BrowserModule, AppRoutingModule, SharedModule, BrowserAnimationsModule],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		SharedModule,
+		BrowserAnimationsModule,
+		AngularFireModule.initializeApp(environment.firebase),
+		AngularFirestoreModule
+	],
 	providers: [],
 	bootstrap: [AppComponent]
 })
