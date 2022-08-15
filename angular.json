@@ -105,6 +105,7 @@
 	},
 	"defaultProject": "garbler",
 	"cli": {
-		"defaultCollection": "@angular-eslint/schematics"
+    "defaultCollection": "@angular-eslint/schematics",
+    "analytics": "4dde80f1-5f95-4491-938f-25db249a586e"
 	}
 }
