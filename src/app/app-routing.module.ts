@@ -40,6 +40,16 @@ const routes: Routes = [
 		component: ExamplesComponent
 	},
 	{
+		path: 'signup',
+		loadChildren: () =>
+			import('./signup/signup.module').then((m) => m.SignupModule)
+	},
+	{
+		path: 'signin',
+		loadChildren: () =>
+			import('./signin/signin.module').then((m) => m.SigninModule)
+	},
+	{
 		path: '**',
 		loadChildren: () =>
 			import('./page-not-found/page-not-found-routing.module').then(
