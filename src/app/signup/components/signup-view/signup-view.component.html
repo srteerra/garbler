@@ -1,1 +1,60 @@
-<p>signup-view works!</p>
+<div class="signup__container">
+	<div class="bg__aside"></div>
+
+	<div class="form__aside">
+		<form>
+			<div>
+				<a href="" class="formSignup__back"
+					><span
+						><mat-icon
+							aria-hidden="false"
+							aria-label="arrow_circle_left"
+							fontIcon="arrow_circle_left"
+						></mat-icon
+					></span>
+					<span>Go Back</span></a
+				>
+			</div>
+			<div class="formSignup__title">
+				<p class="mat-display-2"><strong>Register</strong></p>
+			</div>
+			<mat-form-field appearance="outline" class="formSignup__field">
+				<mat-label>Email</mat-label>
+				<input
+					matInput
+					placeholder="Enter your email here"
+					class="formSignup__input"
+					#emailSignup
+				/>
+			</mat-form-field>
+			<mat-form-field appearance="outline" class="formSignup__field">
+				<mat-label>Password</mat-label>
+				<input
+					matInput
+					placeholder="Enter your password here"
+					class="formSignup__input"
+					#passwordSignup
+				/>
+			</mat-form-field>
+			<div style="padding-bottom: 30px; opacity: 50%">
+				<i><small>Do not trust your credentials to enyone</small></i>
+			</div>
+			<div class="formSignup__button">
+				<button
+					mat-raised-button
+					color="primary"
+					(click)="onSignup(emailSignup.value, passwordSignup.value)"
+				>
+					Sign up
+				</button>
+			</div>
+			<div class="formSignup__logo">
+				<img
+					class="img-logo"
+					src="../../../../assets/logos/primary_complete.png"
+					alt="logo"
+				/>
+			</div>
+		</form>
+	</div>
+</div>
