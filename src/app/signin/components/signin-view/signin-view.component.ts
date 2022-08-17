@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { FirebaseService } from '../../../services/firebase.service';
 
 @Component({
@@ -10,7 +11,10 @@ import { FirebaseService } from '../../../services/firebase.service';
 export class SigninViewComponent {
 	FormLogin: FormGroup;
 
-	constructor(private firebaseService: FirebaseService) {
+	constructor(
+		private firebaseService: FirebaseService,
+		private router: Router
+	) {
 		this.FormLogin = new FormGroup({
 			email: new FormControl(),
 			password: new FormControl()
@@ -22,6 +26,7 @@ export class SigninViewComponent {
 			.signin(this.FormLogin.value)
 			.then((res) => {
 				console.log(res);
+				this.router.navigate(['/main']);
 			})
 			.catch((err) => console.log(err));
 	}

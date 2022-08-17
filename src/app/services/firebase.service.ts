@@ -3,6 +3,8 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import {
 	createUserWithEmailAndPassword,
 	signInWithEmailAndPassword,
+	signInWithPopup,
+	GoogleAuthProvider,
 	signOut,
 	Auth
 } from '@angular/fire/auth';
@@ -16,6 +18,8 @@ export class FirebaseService {
 	async signup({ email, password }: any) {
 		return createUserWithEmailAndPassword(this.firebaseAuth, email, password);
 	}
+
+	async signinGoogle() {}
 
 	async signin({ email, password }: any) {
 		return signInWithEmailAndPassword(this.firebaseAuth, email, password);
