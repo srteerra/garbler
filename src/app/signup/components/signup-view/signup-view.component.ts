@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { FirebaseService } from '../../../services/firebase.service';
 
 @Component({
@@ -7,11 +9,25 @@ import { FirebaseService } from '../../../services/firebase.service';
 	styleUrls: ['./signup-view.component.scss']
 })
 export class SignupViewComponent {
-	isSignedIn = false;
-	constructor(public firebaseService: FirebaseService) {}
+	FormSignup: FormGroup;
 
-	async onSignup(email: string, password: string) {
-		await this.firebaseService.signup(email, password);
-		if (this.firebaseService.isLoggedIn) this.isSignedIn = true;
+	constructor(
+		private firebaseService: FirebaseService,
+		private router: Router
+	) {
+		this.FormSignup = new FormGroup({
+			email: new FormControl(),
+			password: new FormControl()
+		});
+	}
+
+	onSignup() {
+		this.firebaseService
+			.signup(this.FormSignup.value)
+			.then((res) => {
+				console.log(res);
+				this.router.navigate(['/signin']);
+			})
+			.catch((err) => console.log(err));
 	}
 }

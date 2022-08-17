@@ -2,7 +2,7 @@
 	<div class="bg__aside"></div>
 
 	<div class="form__aside">
-		<form>
+		<form [formGroup]="FormLogin" (ngSubmit)="onSignin()">
 			<div>
 				<a href="" class="formSignin__back"
 					><span
@@ -23,7 +23,8 @@
 				<input
 					matInput
 					placeholder="Enter your email here"
-					class="formSignin__input"
+					class="formSignin__input form-control"
+					formControlName="email"
 				/>
 			</mat-form-field>
 			<mat-form-field appearance="outline" class="formSignin__field">
@@ -31,7 +32,9 @@
 				<input
 					matInput
 					placeholder="Enter your password here"
-					class="formSignin__input"
+					class="formSignin__input form-control"
+					type="password"
+					formControlName="password"
 				/>
 			</mat-form-field>
 			<div style="padding-bottom: 30px; opacity: 50%">

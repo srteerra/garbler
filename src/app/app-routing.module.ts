@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { ExamplesComponent } from './examples/examples.component';
+import { LayoutLoggedInComponent } from './layout-logged-in/layout-logged-in.component';
+import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 
 const routes: Routes = [
 	{
@@ -34,6 +36,11 @@ const routes: Routes = [
 					import('./contact/contact.module').then((m) => m.ContactModule)
 			}
 		]
+	},
+	{
+		path: 'main',
+		component: LayoutLoggedInComponent,
+		...canActivate(() => redirectUnauthorizedTo(['/signup']))
 	},
 	{
 		path: 'example',

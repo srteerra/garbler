@@ -1,5 +1,5 @@
 <header>
-	<div id="navMenu" *ngIf="navBlock">
+	<div id="navMenu" *ngIf="navBlock" [@inOutAnimation]>
 		<div class="navMenu__block">
 			<div class="row end-xs">
 				<a (click)="showNavMenu()">

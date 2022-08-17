@@ -2,7 +2,7 @@
 	<div class="bg__aside"></div>
 
 	<div class="form__aside">
-		<form>
+		<form [formGroup]="FormSignup" (ngSubmit)="onSignup()">
 			<div>
 				<a href="" class="formSignup__back"
 					><span
@@ -23,8 +23,8 @@
 				<input
 					matInput
 					placeholder="Enter your email here"
-					class="formSignup__input"
-					#emailSignup
+					class="formSignup__input form-control"
+					formControlName="email"
 				/>
 			</mat-form-field>
 			<mat-form-field appearance="outline" class="formSignup__field">
@@ -32,21 +32,16 @@
 				<input
 					matInput
 					placeholder="Enter your password here"
-					class="formSignup__input"
-					#passwordSignup
+					class="formSignup__input form-control"
+					type="password"
+					formControlName="password"
 				/>
 			</mat-form-field>
 			<div style="padding-bottom: 30px; opacity: 50%">
 				<i><small>Do not trust your credentials to enyone</small></i>
 			</div>
 			<div class="formSignup__button">
-				<button
-					mat-raised-button
-					color="primary"
-					(click)="onSignup(emailSignup.value, passwordSignup.value)"
-				>
-					Sign up
-				</button>
+				<button mat-raised-button color="primary" type="submit">Sign up</button>
 			</div>
 			<div class="formSignup__logo">
 				<img

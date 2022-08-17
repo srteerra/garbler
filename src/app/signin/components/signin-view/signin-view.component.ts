@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { FirebaseService } from '../../../services/firebase.service';
 
 @Component({
@@ -6,22 +7,22 @@ import { FirebaseService } from '../../../services/firebase.service';
 	templateUrl: './signin-view.component.html',
 	styleUrls: ['./signin-view.component.scss']
 })
-export class SigninViewComponent implements OnInit {
-	isSignedIn = false;
+export class SigninViewComponent {
+	FormLogin: FormGroup;
 
-	constructor(public firebaseService: FirebaseService) {}
-
-	ngOnInit() {
-		if (localStorage.getItem('user') !== null) this.isSignedIn = true;
-		else this.isSignedIn = false;
+	constructor(private firebaseService: FirebaseService) {
+		this.FormLogin = new FormGroup({
+			email: new FormControl(),
+			password: new FormControl()
+		});
 	}
 
-	async onSignin(email: string, password: string) {
-		await this.firebaseService.signin(email, password);
-		if (this.firebaseService.isLoggedIn) this.isSignedIn = true;
-	}
-
-	handleLogout() {
-		this.isSignedIn = false;
+	onSignin() {
+		this.firebaseService
+			.signin(this.FormLogin.value)
+			.then((res) => {
+				console.log(res);
+			})
+			.catch((err) => console.log(err));
 	}
 }
