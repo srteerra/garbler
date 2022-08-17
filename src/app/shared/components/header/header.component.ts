@@ -1,9 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import {
+	trigger,
+	state,
+	style,
+	animate,
+	transition
+} from '@angular/animations';
 
 @Component({
 	selector: 'app-header',
 	templateUrl: './header.component.html',
-	styleUrls: ['./header.component.scss']
+	styleUrls: ['./header.component.scss'],
+	animations: [
+		trigger('inOutAnimation', [
+			transition(':enter', [
+				style({ width: 0, opacity: 0 }),
+				animate('0.5s ease-out', style({ width: 500, opacity: 1 }))
+			]),
+			transition(':leave', [
+				style({ width: 500, opacity: 1 }),
+				animate('0.2s ease-in', style({ width: 0, opacity: 0 }))
+			])
+		])
+	]
 })
 export class HeaderComponent implements OnInit {
 	constructor() {}

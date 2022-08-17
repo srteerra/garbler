@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { Firebase } from '@angular/fire';
 
-import { GeoJson } from './map';
+import { GeoJson } from '../map';
 import * as mapboxgl from 'mapbox-gl';
 import { Observable } from 'rxjs';
 

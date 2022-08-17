@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SignupViewComponent } from './signup-view.component';
 
-describe('SignupComponent', () => {
+describe('SignupViewComponent', () => {
   let component: SignupViewComponent;
   let fixture: ComponentFixture<SignupViewComponent>;
 
