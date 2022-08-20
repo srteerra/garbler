@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="form__container">
-		<form action="#">
+		<form [formGroup]="data" action="#">
 			<div>
 				<h1 class="mat-display-3"><strong>Contact us</strong></h1>
 				<p class="mat-body">For business or personal reasons.</p>
@@ -11,11 +11,14 @@
 					<input
 						matInput
 						placeholder="Enter your title here"
-						[formControl]="msg"
+						[formControl]="subject"
 						required
 						minlength="5"
+						formControlName="subject"
 					/>
-					<mat-error *ngIf="msg.invalid">{{ getErrorMessage() }}</mat-error>
+					<mat-error *ngIf="subject.invalid">{{
+						getErrorSubjectMessage()
+					}}</mat-error>
 				</mat-form-field>
 				<mat-form-field appearance="outline" class="input">
 					<mat-label>Enter your email</mat-label>
@@ -24,6 +27,7 @@
 						placeholder="pat@example.com"
 						[formControl]="email"
 						required
+						formControlName="email"
 					/>
 					<mat-error *ngIf="email.invalid">{{
 						getErrorEmailMessage()
@@ -34,11 +38,14 @@
 					<input
 						matInput
 						placeholder="John Smith"
-						[formControl]="msg"
+						[formControl]="name"
 						required
 						minlength="4"
+						formControlName="name"
 					/>
-					<mat-error *ngIf="msg.invalid">{{ getErrorMessage() }}</mat-error>
+					<mat-error *ngIf="name.invalid">{{
+						getErrorNameMessage()
+					}}</mat-error>
 				</mat-form-field>
 				<mat-form-field class="input" appearance="outline">
 					<mat-label>Message</mat-label>
@@ -51,18 +58,14 @@
 						rows="5"
 						max
 						class="input"
+						formControlName="msg"
 					></textarea>
 					<mat-error *ngIf="text.invalid">{{
 						getErrorTextMessage()
 					}}</mat-error>
 				</mat-form-field>
 				<div class="submit-button">
-					<button
-						type="submit"
-						routerLink="/deck"
-						id="primary__button"
-						class="send"
-					>
+					<button id="primary__button" class="send" (click)="sendEmail()">
 						<strong>Send</strong>
 					</button>
 				</div>
