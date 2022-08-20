@@ -9,3 +9,14 @@
 }
 
 
+@media (max-width:400px) {
+	.error-page__title{
+		font-size: 6em;
+	}
+	.error-page__subtitle{
+		font-size: 2em;
+	}
+	.error-page__warning{
+		font-size: 1em;
+	}
+}
