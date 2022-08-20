@@ -1,0 +1,55 @@
+<div class="signin__container">
+	<div class="bg__aside"></div>
+
+	<div class="form__aside">
+		<form [formGroup]="FormLogin" (ngSubmit)="onSignin()">
+			<div>
+				<a href="" class="formSignin__back"
+					><span
+						><mat-icon
+							aria-hidden="false"
+							aria-label="arrow_circle_left"
+							fontIcon="arrow_circle_left"
+						></mat-icon
+					></span>
+					<span>Go Back</span></a
+				>
+			</div>
+			<div class="formSignin__title">
+				<p class="mat-display-2"><strong>Log In</strong></p>
+			</div>
+			<mat-form-field appearance="outline" class="formSignin__field">
+				<mat-label>Email</mat-label>
+				<input
+					matInput
+					placeholder="Enter your email here"
+					class="formSignin__input form-control"
+					formControlName="email"
+				/>
+			</mat-form-field>
+			<mat-form-field appearance="outline" class="formSignin__field">
+				<mat-label>Password</mat-label>
+				<input
+					matInput
+					placeholder="Enter your password here"
+					class="formSignin__input form-control"
+					type="password"
+					formControlName="password"
+				/>
+			</mat-form-field>
+			<div style="padding-bottom: 30px; opacity: 50%">
+				<i><small>Do not trust your credentials to enyone</small></i>
+			</div>
+			<div class="formSignin__button">
+				<button mat-raised-button color="primary">Sign in</button>
+			</div>
+			<div class="formSignin__logo">
+				<img
+					class="img-logo"
+					src="../../../../assets/logos/primary_complete.png"
+					alt="logo"
+				/>
+			</div>
+		</form>
+	</div>
+</div>

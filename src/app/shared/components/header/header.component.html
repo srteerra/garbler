@@ -1,5 +1,5 @@
 <header>
-	<div id="navMenu" *ngIf="navBlock">
+	<div id="navMenu" *ngIf="navBlock" [@inOutAnimation]>
 		<div class="navMenu__block">
 			<div class="row end-xs">
 				<a (click)="showNavMenu()">
@@ -10,24 +10,48 @@
 				<h1><strong>Menu</strong></h1>
 			</div>
 			<div class="row navMenu__links">
-				<a routerLink="/home" routerLinkActive="active" class="header-link"
+				<a
+					routerLink="/home"
+					routerLinkActive="active"
+					class="header-link"
+					(click)="showNavMenu()"
 					><h1>Home</h1></a
 				>
-				<a routerLink="/tracker" routerLinkActive="active" class="header-link"
+				<a
+					routerLink="/tracker"
+					routerLinkActive="active"
+					class="header-link"
+					(click)="showNavMenu()"
 					><h1>Tracker</h1></a
 				>
-				<a routerLink="/about" routerLinkActive="active" class="header-link"
+				<a
+					routerLink="/about"
+					routerLinkActive="active"
+					class="header-link"
+					(click)="showNavMenu()"
 					><h1>About us</h1></a
 				>
-				<a routerLink="/contact" routerLinkActive="active" class="header-link"
+				<a
+					routerLink="/contact"
+					routerLinkActive="active"
+					class="header-link"
+					(click)="showNavMenu()"
 					><h1>Contact</h1></a
 				>
-				<a routerLink="/contact" class="header-link navMenu__button"
+				<a
+					routerLink="/signup"
+					class="header-link navMenu__button"
+					(click)="showNavMenu()"
 					><strong>Join us!</strong></a
 				>
-				<a routerLink="/contact" class="header-link"
-					><h3>or just <span class="navMenu__signIn">Sign in</span></h3></a
-				>
+				<h3>
+					or just
+					<span class="navMenu__signIn"
+						><a routerLink="/signin" class="header-link" (click)="showNavMenu()"
+							>Sign in</a
+						></span
+					>
+				</h3>
 			</div>
 			<div class="row bottom-xs center-xs">
 				<a routerLink="/home" class="header-link"

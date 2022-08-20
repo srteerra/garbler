@@ -8,16 +8,21 @@ import { LayoutComponent } from './layout/layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment';
-import { AngularFireModule } from '@angular/fire/compat';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { LayoutLoggedInComponent } from './layout-logged-in/layout-logged-in.component';
 
 @NgModule({
-	declarations: [AppComponent, LayoutComponent],
+	declarations: [AppComponent, LayoutComponent, LayoutLoggedInComponent],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
 		SharedModule,
 		BrowserAnimationsModule,
-		AngularFireModule.initializeApp(environment.firebase),
+		provideFirebaseApp(() => initializeApp(environment.firebase)),
+		provideFirestore(() => getFirestore()),
+		provideAuth(() => getAuth()),
 		AngularFirestoreModule
 	],
 	providers: [],

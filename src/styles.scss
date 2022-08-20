@@ -96,3 +96,13 @@ h4 {
 .danger__status {
 	color: #fc6565;
 }
+
+.marker {
+	background-image: url('./assets/vectors/aerial-truck.png');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 70px;
+	height: 70px;
+	cursor: pointer;
+}

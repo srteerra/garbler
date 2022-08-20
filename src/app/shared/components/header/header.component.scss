@@ -26,6 +26,18 @@
 		padding: 40px 60px;
 		background-color: rgb(45, 45, 45);
 		color: white;
+
+		@media (max-width: 750px) {
+			width: 70vw;
+		}
+
+		@media (max-width: 450px) {
+			width: 80vw;
+		}
+
+		@media (max-width: 350px) {
+			width: 100vw;
+		}
 	}
 
 	.navMenu__title {
@@ -60,7 +72,11 @@
 
 .nav__container {
 	background-color: transparent;
-	padding: 50px 30px;
+	padding: 50px 0;
+
+	@media (min-width: 500px) {
+		padding: 50px 30px;
+	}
 }
 
 .nav__links {

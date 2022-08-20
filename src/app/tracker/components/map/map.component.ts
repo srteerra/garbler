@@ -14,25 +14,27 @@ export class MapComponent implements OnInit, OnChanges {
 	style = 'mapbox://styles/srteerra/cl62y0dr3001i15my49hw1j8o';
 	lat = 0;
 	lng = 0;
+	numberOf = 0;
 	marker!: mapboxgl.Marker;
 
-	position$: Observable<any>;
+	trucks$: Observable<any>;
 
 	constructor(db: AngularFirestore) {
-		this.position$ = db.collection('truck-1').valueChanges();
+		this.trucks$ = db.collection('trucks').valueChanges();
 
-		// Set marker options.
-		this.marker = new mapboxgl.Marker({
-			color: '#FFFFFF',
-			draggable: false
-		});
-
-		this.position$.subscribe((res) => {
+		this.trucks$.subscribe((res) => {
 			console.log(res[0].position);
+			this.numberOf = res.length;
 			this.lat = res[0].position._lat;
 			this.lng = res[0].position._long;
 			this.animateMarker(this.lng, this.lat);
 		});
+
+		let el = document.createElement('div');
+		el.className = 'marker';
+		this.marker = new mapboxgl.Marker(el, { draggable: false })
+			.setLngLat([this.lng, this.lat])
+			.addTo(this.map);
 	}
 
 	ngOnInit() {
@@ -57,10 +59,18 @@ export class MapComponent implements OnInit, OnChanges {
 		// disable map zoom when using scroll
 		this.map.scrollZoom.disable();
 
-		this.addMarker();
+		this.addMarkers();
 	}
 
-	addMarker(): void {
+	addMarkers(): void {
+		// for (var i = 0; i >= this.numberOf; i++) {
+		// 	// Set marker options.
+		// 	const el = document.createElement('div');
+		// 	el.className = 'marker';
+		// 	new mapboxgl.Marker(el, { draggable: false })
+		// 		.setLngLat([this.lng, this.lat])
+		// 		.addTo(this.map);
+		// }
 		// Set marker options.
 		new mapboxgl.Marker({
 			color: '#FFFFFF',
@@ -83,6 +93,6 @@ export class MapComponent implements OnInit, OnChanges {
 	ngOnChanges(changes: SimpleChanges): void {
 		console.log('changes: ', changes);
 
-		this.addMarker();
+		this.addMarkers();
 	}
 }
