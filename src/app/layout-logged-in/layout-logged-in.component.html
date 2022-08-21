@@ -1,7 +1,49 @@
-<div>
-	<h3>You're logged</h3>
-	<button (click)="tlogout()">Logout</button>
-</div>
-<div>
-	<router-outlet></router-outlet>
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+	<mat-toolbar class="example-toolbar">
+		<button mat-icon-button (click)="snav.toggle()">
+			<mat-icon>menu</mat-icon>
+		</button>
+		<h1 class="example-app-name">Garbler</h1>
+	</mat-toolbar>
+
+	<mat-sidenav-container
+		class="example-sidenav-container"
+		[style.marginTop.px]="mobileQuery.matches ? 56 : 0"
+	>
+		<mat-sidenav
+			#snav
+			[mode]="mobileQuery.matches ? 'over' : 'side'"
+			opened
+			[fixedInViewport]="mobileQuery.matches"
+			fixedTopGap="56"
+			class="menu-sidenav"
+		>
+			<mat-nav-list>
+				<div class="list">
+					<div>
+						<a routerLink="/dashboard/home" class="mat-h3"><p>Home</p></a>
+						<a routerLink=""><p class="mat-h3">Tracker</p></a>
+						<a href="/"><p class="mat-h3">My district</p></a>
+						<a href="/"><p class="mat-h3">Sevices</p></a>
+					</div>
+					<div style="width: 90%; margin: 0 auto">
+						<a href="/"><p class="mat-h3">Settings</p></a>
+						<a href="/"><p class="mat-h3">Integrations</p></a>
+						<a href="/"><p class="mat-h3">Help & Support</p></a>
+						<hr />
+						<a (click)="tlogout()"><p class="mat-h3">Log Out</p></a>
+						<img
+							style="width: 90%; margin-top: 24px"
+							src="../../../../assets/logos/white_horizontal.png"
+							alt="garbler"
+						/>
+					</div>
+				</div>
+			</mat-nav-list>
+		</mat-sidenav>
+
+		<mat-sidenav-content>
+			<router-outlet></router-outlet>
+		</mat-sidenav-content>
+	</mat-sidenav-container>
 </div>

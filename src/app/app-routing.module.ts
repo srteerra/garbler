@@ -4,6 +4,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { ExamplesComponent } from './examples/examples.component';
 import { LayoutLoggedInComponent } from './layout-logged-in/layout-logged-in.component';
 import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
+import { MainDashboardViewComponent } from './main-dashboard/component/main-dashboard-view/main-dashboard-view.component';
+import { MainDashboardModule } from './main-dashboard/main-dashboard.module';
 
 const routes: Routes = [
 	{
@@ -38,9 +40,22 @@ const routes: Routes = [
 		]
 	},
 	{
-		path: 'main',
+		path: 'dashboard',
 		component: LayoutLoggedInComponent,
-		...canActivate(() => redirectUnauthorizedTo(['/signup']))
+		children: [
+			{
+				path: '',
+				redirectTo: '/dashboard/home',
+				pathMatch: 'full'
+			},
+			{
+				path: 'home',
+				loadChildren: () =>
+					import('./main-dashboard/main-dashboard.module').then(
+						(m) => m.MainDashboardModule
+					)
+			}
+		]
 	},
 	{
 		path: 'example',
