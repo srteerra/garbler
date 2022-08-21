@@ -7,7 +7,14 @@ import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-	declarations: [AboutViewComponent],
-	imports: [CommonModule, AboutRoutingModule, MaterialModule, SharedModule]
+  declarations: [
+    AboutViewComponent
+  ],
+  imports: [
+    CommonModule,
+    AboutRoutingModule,
+		MaterialModule,
+		SharedModule
+  ]
 })
-export class AboutModule {}
+export class AboutModule { }
