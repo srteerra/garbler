@@ -1,27 +1,4 @@
 .dashboard-container {
-	padding: 50px 100px;
-	.userBar {
-		width: 100%;
-		.profile {
-			width: 100%;
-			display: flex;
-			text-align: end;
-			flex-direction: row;
-			align-items: center;
-			justify-content: end;
-			.userName {
-				text-align: end;
-				p {
-					margin: 0;
-				}
-			}
-			img {
-				width: 50px;
-				height: 50px;
-				margin-left: 24px;
-			}
-		}
-	}
 	.welcomeUser {
 		margin: 20px 0;
 		p {
@@ -123,22 +100,6 @@
 				height: 100px;
 				margin: 10px;
 			}
-		}
-	}
-
-	.sendEmail {
-		width: 70px;
-		height: 70px;
-		border-radius: 50%;
-		box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-		position: fixed;
-		bottom: 70px;
-		right: 70px;
-		display: grid;
-		place-content: center;
-		@media (max-width: 750px) {
-			position: initial;
-			margin: 20px auto;
 		}
 	}
 }

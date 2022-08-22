@@ -22,8 +22,10 @@
 				<div class="list">
 					<div>
 						<a routerLink="/dashboard/home" class="mat-h3"><p>Home</p></a>
-						<a routerLink=""><p class="mat-h3">Tracker</p></a>
-						<a href="/"><p class="mat-h3">My district</p></a>
+						<a routerLink="/dashboard/tracker"><p class="mat-h3">Tracker</p></a>
+						<a routerLink="/dashboard/district"
+							><p class="mat-h3">My district</p></a
+						>
 						<a href="/"><p class="mat-h3">Sevices</p></a>
 					</div>
 					<div style="width: 90%; margin: 0 auto">
@@ -43,7 +45,21 @@
 		</mat-sidenav>
 
 		<mat-sidenav-content>
-			<router-outlet></router-outlet>
+			<div class="toolbar-container">
+				<div class="row userBar">
+					<div class="profile">
+						<div class="userName">
+							<p class="mat-h4" ngModel="userName">{{ userName }}</p>
+							<p ngModel="userDistrict">{{ userDistrict }}</p>
+						</div>
+						<img src="../../../../assets/vectors/step1.png" alt="userImage" />
+					</div>
+				</div>
+				<router-outlet></router-outlet>
+				<a class="sendEmail" routerLink="/dashboard/contact"
+					><img src="../../../../assets/vectors/email.png" alt="send"
+				/></a>
+			</div>
 		</mat-sidenav-content>
 	</mat-sidenav-container>
 </div>

@@ -64,6 +64,16 @@ const routes: Routes = [
 					import('./main-dashboard/main-dashboard.module').then(
 						(m) => m.MainDashboardModule
 					)
+			},
+			{
+				path: 'contact',
+				loadChildren: () =>
+					import('./contact/contact.module').then((m) => m.ContactModule)
+			},
+			{
+				path: 'district',
+				loadChildren: () =>
+					import('./district/district.module').then((m) => m.DistrictModule)
 			}
 		]
 	},

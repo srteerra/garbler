@@ -12,6 +12,9 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 	styleUrls: ['./layout-logged-in.component.scss']
 })
 export class LayoutLoggedInComponent {
+	userName = 'Luis Hernandez';
+	userDistrict = 'DISTRICT 5';
+
 	mobileQuery: MediaQueryList;
 	@ViewChild(MatSidenav)
 	sidenav!: MatSidenav;
