@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainDashboardViewComponent {
 	userName = 'Luis Hernandez';
+	userDistrict = 'DISTRICT 5';
 
 	constructor() {}
 }
