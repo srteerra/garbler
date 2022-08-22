@@ -38,7 +38,7 @@ mat-toolbar {
 }
 
 mat-sidenav {
-	width: 300px;
+	width: 400px;
 	text-align: center;
 	margin-right: 16px;
 	background-color: #262626;
@@ -49,9 +49,13 @@ mat-sidenav {
 	height: 97vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: space-around;
 	margin: auto 0;
-	padding: 24px 0;
+}
+
+.list a:hover {
+	color: lightgray;
+	cursor: pointer;
 }
 
 @media (max-width: 900px) {
