@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import {
 	EmailValidator,
 	FormControl,
@@ -14,8 +16,7 @@ import {
 })
 export class ContactViewComponent {
 	data: FormGroup;
-
-	constructor(private httpclient: HttpClient) {
+	constructor(private _snackBar: MatSnackBar) {
 		this.data = new FormGroup({
 			email: this.email,
 			msg: this.text,
@@ -45,7 +46,7 @@ export class ContactViewComponent {
 
 	getErrorSubjectMessage() {
 		if (this.subject.hasError('required')) {
-			return 'You must enter a name';
+			return 'You must enter a subject';
 		}
 		return this.subject.hasError('subject') ? 'Not a valid subject' : '';
 	}
@@ -57,18 +58,25 @@ export class ContactViewComponent {
 		return this.text.hasError('text') ? 'Not a valid message' : '';
 	}
 
-	sendEmail() {
-		let params = {
-			email: this.data.value.email,
-			subject: this.data.value.subject,
-			//name: this.data.value.name,
-			msg: this.data.value.msg
-		};
-		console.log(params);
-		this.httpclient
-			.post('http://localhost:4200/send-email', params)
-			.subscribe((res) => {
-				console.log(res);
-			});
+	public sendEmail(e: Event) {
+		emailjs
+			.sendForm(
+				'service_l29wzhl',
+				'template_zij4zp8',
+				e.target as HTMLFormElement,
+				'Wsz09E5AFMaBWXyR9'
+			)
+			.then(
+				(result: EmailJSResponseStatus) => {
+					console.log(result.text);
+				},
+				(error) => {
+					console.log(error.text);
+				}
+			);
+		this.data.reset();
+		this._snackBar.open('The message was sent succesfully', 'OK', {
+			duration: 3000
+		});
 	}
 }

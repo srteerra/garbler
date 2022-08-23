@@ -1,6 +1,6 @@
 <div class="">
 	<div class="form__container">
-		<form [formGroup]="data" action="#">
+		<form [formGroup]="data" (submit)="sendEmail($event)">
 			<div>
 				<h1 class="mat-display-3"><strong>Contact us</strong></h1>
 				<p class="mat-body">For business or personal reasons.</p>
@@ -11,46 +11,36 @@
 					<input
 						matInput
 						placeholder="Enter your title here"
-						[formControl]="subject"
 						required
 						minlength="5"
+						name="subject"
 						formControlName="subject"
 					/>
-					<mat-error *ngIf="subject.invalid">{{
-						getErrorSubjectMessage()
-					}}</mat-error>
 				</mat-form-field>
 				<mat-form-field appearance="outline" class="input">
 					<mat-label>Enter your email</mat-label>
 					<input
 						matInput
 						placeholder="pat@example.com"
-						[formControl]="email"
 						required
+						name="email"
 						formControlName="email"
 					/>
-					<mat-error *ngIf="email.invalid">{{
-						getErrorEmailMessage()
-					}}</mat-error>
 				</mat-form-field>
 				<mat-form-field appearance="outline" class="input">
 					<mat-label>Enter your name</mat-label>
 					<input
 						matInput
 						placeholder="John Smith"
-						[formControl]="name"
 						required
 						minlength="4"
+						name="name"
 						formControlName="name"
 					/>
-					<mat-error *ngIf="name.invalid">{{
-						getErrorNameMessage()
-					}}</mat-error>
 				</mat-form-field>
 				<mat-form-field class="input" appearance="outline">
 					<mat-label>Message</mat-label>
 					<textarea
-						[formControl]="text"
 						required
 						minlength="20"
 						matInput
@@ -58,14 +48,12 @@
 						rows="5"
 						max
 						class="input"
+						name="msg"
 						formControlName="msg"
 					></textarea>
-					<mat-error *ngIf="text.invalid">{{
-						getErrorTextMessage()
-					}}</mat-error>
 				</mat-form-field>
 				<div class="submit-button">
-					<button id="primary__button" class="send" (click)="sendEmail()">
+					<button type="submit" class="send">
 						<strong>Send</strong>
 					</button>
 				</div>

@@ -18,5 +18,20 @@
 	.submit-button {
 		margin-top: 20px;
 		text-align: center;
+
+		.send {
+			background-color: #688f4e;
+			padding: 15px 50px;
+			text-align: center;
+			border: none;
+			border-radius: 50px;
+			color: white;
+			transition: ease-out 0.3s;
+
+			&:hover {
+				background-color: #88aa71;
+				cursor: pointer;
+			}
+		}
 	}
 }
