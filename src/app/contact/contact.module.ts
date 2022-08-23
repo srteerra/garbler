@@ -6,6 +6,7 @@ import { ContactViewComponent } from './components/contact-view/contact-view.com
 import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
 	declarations: [ContactViewComponent],
@@ -13,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 		CommonModule,
 		ContactRoutingModule,
 		ReactiveFormsModule,
+		HttpClientModule,
 		MaterialModule,
 		SharedModule
 	]

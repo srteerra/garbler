@@ -1,49 +1,55 @@
-<div class="container">
+<div class="signup__container">
+	<div class="bg__aside"></div>
 
-	<div class="div-left">
-
-		<img class="side-img"
-		src="https://images.unsplash.com/photo-1444084316824-dc26d6657664?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="side-img"/>
-	</div>
-
-	<div class="div-right">
-		<div class="div-back-arrow">
-			<div class="div-left-arrow"><img class="back-arrow" src="https://cdn-icons-png.flaticon.com/512/93/93634.png" alt="back-arrow"></div>
-			<div class="div-right-arrow"><mat-label>Go Back</mat-label></div>
-
-		</div>
-		<div class="div-label">
-			<mat-label class="log-label">Register</mat-label>
-		</div>
-		<div class="div-login">
-			<form >
+	<div class="form__aside">
+		<form [formGroup]="FormSignup" (ngSubmit)="onSignup()">
+			<div>
+				<a href="" class="formSignup__back"
+					><span
+						><mat-icon
+							aria-hidden="false"
+							aria-label="arrow_circle_left"
+							fontIcon="arrow_circle_left"
+						></mat-icon
+					></span>
+					<span>Go Back</span></a
+				>
+			</div>
+			<div class="formSignup__title">
+				<p class="mat-display-2"><strong>Register</strong></p>
+			</div>
+			<mat-form-field appearance="outline" class="formSignup__field">
 				<mat-label>Email</mat-label>
-				<p>
-					<mat-form-field appearance="outline">
-						<input matInput placeholder="Enter your email here" required>
-						<mat-icon matSuffix></mat-icon>
-					</mat-form-field>
-				</p>
+				<input
+					matInput
+					placeholder="Enter your email here"
+					class="formSignup__input form-control"
+					formControlName="email"
+				/>
+			</mat-form-field>
+			<mat-form-field appearance="outline" class="formSignup__field">
 				<mat-label>Password</mat-label>
-				<p>
-					<mat-form-field appearance="outline">
-						<input matInput placeholder="Enter your password here" required>
-					</mat-form-field>
-				</p>
-
-				<mat-label class="warning-label">Do not trust your credentials to enyone</mat-label><br>
-				<mat-radio-button>I've read I accept the <b>Terms and Conditions</b></mat-radio-button>
-				<div class="button-row">
-					<button mat-raised-button color="primary" >Sing In</button>
-				</div>
-			</form>
-		</div>
-
-		<div class="div-logo">
-			<img class="img-logo" src="../../../../assets/logos/primary_complete.png" alt="logo">
-		</div>
-
-
+				<input
+					matInput
+					placeholder="Enter your password here"
+					class="formSignup__input form-control"
+					type="password"
+					formControlName="password"
+				/>
+			</mat-form-field>
+			<div style="padding-bottom: 30px; opacity: 50%">
+				<i><small>Do not trust your credentials to enyone</small></i>
+			</div>
+			<div class="formSignup__button">
+				<button mat-raised-button color="primary" type="submit">Sign up</button>
+			</div>
+			<div class="formSignup__logo">
+				<img
+					class="img-logo"
+					src="../../../../assets/logos/primary_complete.png"
+					alt="logo"
+				/>
+			</div>
+		</form>
 	</div>
-
 </div>

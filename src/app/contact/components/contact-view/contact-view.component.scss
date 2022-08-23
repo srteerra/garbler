@@ -1,5 +1,6 @@
 .form__container {
 	width: 50%;
+	min-width: 300px;
 	margin: 40px auto;
 	text-align: center;
 	.input {
@@ -17,5 +18,12 @@
 	.submit-button {
 		margin-top: 20px;
 		text-align: center;
+
+		.send {
+			&:hover {
+				background-color: #88aa71;
+				cursor: pointer;
+			}
+		}
 	}
 }

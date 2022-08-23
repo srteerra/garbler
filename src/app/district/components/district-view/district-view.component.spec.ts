@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SigninViewComponent } from './signin-view.component';
+import { DistrictViewComponent } from './district-view.component';
 
-describe('SigninViewComponent', () => {
-  let component: SigninViewComponent;
-  let fixture: ComponentFixture<SigninViewComponent>;
+describe('DistrictViewComponent', () => {
+  let component: DistrictViewComponent;
+  let fixture: ComponentFixture<DistrictViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SigninViewComponent ]
+      declarations: [ DistrictViewComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SigninViewComponent);
+    fixture = TestBed.createComponent(DistrictViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

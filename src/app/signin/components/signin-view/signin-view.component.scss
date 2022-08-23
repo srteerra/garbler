@@ -1,116 +1,103 @@
-.side-img{
-  width:100%;
-  height:100%;
-  background-repeat:no-repeat;
-  background-size: cover;
+.signin__container {
+	width: 100vw;
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
 
-}
-.signin-container {
-	margin: 0;
-  display: flex;
-	font-family: Poppins;
-	font-size: 15px;
-	font-weight: 500;
-	line-height: 30px;
-	letter-spacing: 0em;
-	text-align: left;
-
+	@media screen and (min-width: 1100px) {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr;
+	}
 }
 
-.div-left {
-	float: left;
-  flex: 50%;
+.bg__aside {
+	display: none;
+
+	@media screen and (min-width: 1100px) {
+		display: block;
+		background-image: url('https://images.unsplash.com/photo-1444084316824-dc26d6657664?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
 }
 
-.div-right {
-	float: right;
- 	flex: 50%;
-}
+.form__aside {
+	width: 100%;
+	form {
+		width: 100%;
+		padding: 20px 40px;
 
-.div-login{
-	padding-top: 10%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.div-back-arrow{
-	display: flex;
-	padding: 5%;
-	align-items: center;
-	height: 100px;
-		p{
-			margin-left: 10px;
+		@media screen and (min-width: 600px) {
+			padding: 20px 80px;
 		}
-		.div-left-arrow{
-			padding: 0;
-			margin: 0;
+
+		@media screen and (min-width: 800px) {
+			padding: 20px 150px;
 		}
+
+		@media screen and (min-width: 1100px) {
+			padding: 20px 80px;
+		}
+
+		.formSignin__back {
+			display: flex;
+			align-items: center;
+
+			span {
+				display: flex;
+				align-items: center;
+				height: 40px;
+
+				&:nth-of-type(2) {
+					padding-left: 6px;
+				}
+			}
+		}
+
+		.formSignin__title {
+			padding: 40px 0;
+			margin-top: 120px;
+
+			p {
+				margin: 0;
+			}
+		}
+
+		.formSignin__field {
+			width: 100%;
+
+			.formSignin__input {
+				width: 100%;
+			}
+		}
+
+		.formSignin__button {
+			width: 100%;
+
+			button {
+				width: 100%;
+			}
+		}
+
+		.formSignin__logo {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			img {
+				max-width: 300px;
+				min-width: 200px;
+			}
+		}
+	}
 }
 
-
-.log-label{
-	font-family: Poppins;
-	font-size: 64px;
-	font-weight: 700;
-	line-height: 96px;
-
+.img-logo {
+	width: 80%;
+	height: 80%;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
-
-.div-label{
- padding-left: 17%;
-}
-
-mat-form-field {
-  width: 100%;
-}
-
-::ng-deep .mat-form-field-outline-start {
-  border-radius: 22.5px 0 0 22.5px !important;
-  min-width: 22.5px !important;
-
-}
-
-::ng-deep .mat-form-field-outline-end {
-  border-radius: 0 22.5px 22.5px 0 !important;
-}
-
-.button-row {
-  display: table-cell;
-  width: 490px;
-}
-
-.button-row .mat-button-base {
-  margin: 8px 8px 8px 0;
-	border-radius: 9px;
-}
-
-.button-container {
-  display: flex;
-  justify-content: center;
-  width: 120px;
-}
-
-.mat-raised-button{
-	border-radius: 22.5px !important;
-}
-
-.back-arrow{
-	width: 20px;
-	height: 20px;
-}
-
-
-.div-logo{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.img-logo{
-	width:80%;
-  height:80%;
-  background-repeat:no-repeat;
-  background-size: cover;
-}
-

@@ -2,6 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { ExamplesComponent } from './examples/examples.component';
+import { LayoutLoggedInComponent } from './layout-logged-in/layout-logged-in.component';
+import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
+import { MainDashboardViewComponent } from './main-dashboard/component/main-dashboard-view/main-dashboard-view.component';
+import { MainDashboardModule } from './main-dashboard/main-dashboard.module';
 
 const routes: Routes = [
 	{
@@ -24,9 +28,28 @@ const routes: Routes = [
 					import('./about/about.module').then((m) => m.AboutModule)
 			},
 			{
-				path: 'tracker',
+				path: 'contact',
 				loadChildren: () =>
-					import('./tracker/tracker.module').then((m) => m.TrackerModule)
+					import('./contact/contact.module').then((m) => m.ContactModule)
+			}
+		]
+	},
+	{
+		path: 'dashboard',
+		component: LayoutLoggedInComponent,
+		...canActivate(() => redirectUnauthorizedTo(['/signin'])),
+		children: [
+			{
+				path: '',
+				redirectTo: '/dashboard/home',
+				pathMatch: 'full'
+			},
+			{
+				path: 'home',
+				loadChildren: () =>
+					import('./main-dashboard/main-dashboard.module').then(
+						(m) => m.MainDashboardModule
+					)
 			},
 			{
 				path: 'contact',
@@ -34,20 +57,25 @@ const routes: Routes = [
 					import('./contact/contact.module').then((m) => m.ContactModule)
 			},
 			{
-				path: 'signup',
+				path: 'district',
 				loadChildren: () =>
-					import('./signup/signup.module').then((m) => m.SignupModule)
-			},
-			{
-				path: 'signin',
-				loadChildren: () =>
-					import('./signin/signin.module').then((m) => m.SigninModule)
+					import('./district/district.module').then((m) => m.DistrictModule)
 			}
 		]
 	},
 	{
 		path: 'example',
 		component: ExamplesComponent
+	},
+	{
+		path: 'signup',
+		loadChildren: () =>
+			import('./signup/signup.module').then((m) => m.SignupModule)
+	},
+	{
+		path: 'signin',
+		loadChildren: () =>
+			import('./signin/signin.module').then((m) => m.SigninModule)
 	},
 	{
 		path: '**',
