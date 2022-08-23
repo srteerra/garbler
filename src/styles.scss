@@ -1,4 +1,3 @@
-
 @import 'theme.scss';
 
 html,
@@ -82,6 +81,11 @@ h4 {
 
 	&:hover {
 		background-color: #88aa71;
+		cursor: pointer;
+	}
+	&:disabled {
+		background-color: #98ac8a;
+		cursor: default;
 	}
 }
 
@@ -105,4 +109,16 @@ h4 {
 	width: 70px;
 	height: 70px;
 	cursor: pointer;
+}
+
+.emailSent {
+	background: #262626 !important;
+	color: #fff !important;
+	padding: 20px;
+	font-size: 30px;
+	font-weight: 500;
+}
+.emailSent button {
+	background-color: #688f4e;
+	color: white;
 }

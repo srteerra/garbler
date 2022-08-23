@@ -26,7 +26,7 @@ export class SigninViewComponent {
 			.signin(this.FormLogin.value)
 			.then((res) => {
 				console.log(res);
-				this.router.navigate(['/main']);
+				this.router.navigate(['/dashboard']);
 			})
 			.catch((err) => console.log(err));
 	}

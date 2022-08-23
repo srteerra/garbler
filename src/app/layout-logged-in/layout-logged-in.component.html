@@ -18,22 +18,90 @@
 			fixedTopGap="56"
 			class="menu-sidenav"
 		>
-			<mat-nav-list>
+			<mat-nav-list
+				data-aos="fade-up"
+				data-aos-easing="linear"
+				data-aos-delay="400"
+				data-aos-duration="1000"
+			>
 				<div class="list">
 					<div>
-						<a routerLink="/dashboard/home" class="mat-h3"><p>Home</p></a>
-						<a routerLink="/dashboard/tracker"><p class="mat-h3">Tracker</p></a>
-						<a routerLink="/dashboard/district"
-							><p class="mat-h3">My district</p></a
+						<a routerLink="/dashboard/home" class="mat-h3"
+							><p data-aos="fade-right" data-aos-duration="1000">Home</p></a
 						>
-						<a href="/"><p class="mat-h3">Sevices</p></a>
+						<a routerLink="/dashboard/tracker"
+							><p
+								class="mat-h3"
+								data-aos="fade-right"
+								data-aos-duration="1000"
+								data-aos-delay="600"
+							>
+								Tracker
+							</p></a
+						>
+						<a routerLink="/dashboard/district"
+							><p
+								class="mat-h3"
+								data-aos="fade-right"
+								data-aos-duration="1000"
+								data-aos-delay="700"
+							>
+								My district
+							</p></a
+						>
+						<a href="/"
+							><p
+								class="mat-h3"
+								data-aos="fade-right"
+								data-aos-duration="1000"
+								data-aos-delay="800"
+							>
+								Sevices
+							</p></a
+						>
 					</div>
 					<div style="width: 90%; margin: 0 auto">
-						<a href="/"><p class="mat-h3">Settings</p></a>
-						<a href="/"><p class="mat-h3">Integrations</p></a>
-						<a href="/"><p class="mat-h3">Help & Support</p></a>
+						<a href="/"
+							><p
+								class="mat-h3"
+								data-aos="fade-right"
+								data-aos-duration="1000"
+								data-aos-delay="900"
+							>
+								Settings
+							</p></a
+						>
+						<a href="/"
+							><p
+								class="mat-h3"
+								data-aos="fade-right"
+								data-aos-duration="1000"
+								data-aos-delay="1000"
+							>
+								Integrations
+							</p></a
+						>
+						<a href="/"
+							><p
+								class="mat-h3"
+								data-aos="fade-right"
+								data-aos-duration="1000"
+								data-aos-delay="1100"
+							>
+								Help & Support
+							</p></a
+						>
 						<hr />
-						<a (click)="tlogout()"><p class="mat-h3">Log Out</p></a>
+						<a (click)="tlogout()"
+							><p
+								class="mat-h3"
+								data-aos="fade-right"
+								data-aos-duration="1000"
+								data-aos-delay="1200"
+							>
+								Log Out
+							</p></a
+						>
 						<img
 							style="width: 90%; margin-top: 24px"
 							src="../../../../assets/logos/white_horizontal.png"
@@ -47,7 +115,7 @@
 		<mat-sidenav-content>
 			<div class="toolbar-container">
 				<div class="row userBar">
-					<div class="profile">
+					<div class="profile" data-aos="fade-left">
 						<div class="userName">
 							<p class="mat-h4" ngModel="userName">{{ userName }}</p>
 							<p ngModel="userDistrict">{{ userDistrict }}</p>
@@ -56,7 +124,10 @@
 					</div>
 				</div>
 				<router-outlet></router-outlet>
-				<a class="sendEmail" routerLink="/dashboard/contact"
+				<a
+					data-aos="fade-left"
+					class="sendEmail"
+					routerLink="/dashboard/contact"
 					><img src="../../../../assets/vectors/email.png" alt="send"
 				/></a>
 			</div>

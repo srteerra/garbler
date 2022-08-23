@@ -1,7 +1,7 @@
 <div>
 	<div class="dashboard-container">
 		<div class="row">
-			<div class="welcomeUser">
+			<div class="welcomeUser" data-aos="fade-right">
 				<p class="mat-display-1">Welcome</p>
 				<p class="mat-display-1" ngModel="userName">
 					<strong>{{ userName }}!</strong>
@@ -9,7 +9,7 @@
 			</div>
 		</div>
 		<!-- Your truck section -->
-		<div class="row truck-container">
+		<div class="row truck-container" data-aos="fade-right">
 			<div class="tracker__content">
 				<p class="mat-h4">Your truck</p>
 				<div class="tracker__aside">
@@ -36,9 +36,20 @@
 		<div class="related-container">
 			<p class="mat-h4">Related</p>
 			<div class="row related-content">
-				<div class="col-lg-3 col-md-12 col-sm-12 related-card"></div>
-				<div class="col-lg-3 col-md-12 col-sm-12 related-card"></div>
-				<div class="col-lg-3 col-md-12 col-sm-12 related-card"></div>
+				<div
+					class="col-lg-3 col-md-12 col-sm-12 related-card"
+					data-aos="fade-up"
+				></div>
+				<div
+					class="col-lg-3 col-md-12 col-sm-12 related-card"
+					data-aos="fade-up"
+					data-aos-delay="200"
+				></div>
+				<div
+					class="col-lg-3 col-md-12 col-sm-12 related-card"
+					data-aos="fade-up"
+					data-aos-delay="300"
+				></div>
 			</div>
 		</div>
 	</div>

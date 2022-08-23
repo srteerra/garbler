@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import {
 	EmailValidator,
 	FormControl,
@@ -15,6 +15,11 @@ import {
 	styleUrls: ['./contact-view.component.scss']
 })
 export class ContactViewComponent {
+	subjectInput = null;
+	emailInput = null;
+	nameInput = null;
+	msgInput = null;
+	isDisabled = false;
 	data: FormGroup;
 	constructor(private _snackBar: MatSnackBar) {
 		this.data = new FormGroup({
@@ -24,6 +29,8 @@ export class ContactViewComponent {
 			name: this.name
 		});
 	}
+
+	if() {}
 
 	name = new FormControl('', [Validators.required]);
 	subject = new FormControl('', [Validators.required]);
@@ -68,6 +75,9 @@ export class ContactViewComponent {
 			)
 			.then(
 				(result: EmailJSResponseStatus) => {
+					this._snackBar.open('The message was sent succesfully', 'OK', {
+						panelClass: ['emailSent', 'login-snackbar']
+					});
 					console.log(result.text);
 				},
 				(error) => {
@@ -75,8 +85,5 @@ export class ContactViewComponent {
 				}
 			);
 		this.data.reset();
-		this._snackBar.open('The message was sent succesfully', 'OK', {
-			duration: 3000
-		});
 	}
 }

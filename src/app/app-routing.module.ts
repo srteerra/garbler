@@ -28,30 +28,16 @@ const routes: Routes = [
 					import('./about/about.module').then((m) => m.AboutModule)
 			},
 			{
-				path: 'tracker',
-				loadChildren: () =>
-					import('./tracker/tracker.module').then((m) => m.TrackerModule)
-			},
-			{
 				path: 'contact',
 				loadChildren: () =>
 					import('./contact/contact.module').then((m) => m.ContactModule)
-			},
-			{
-				path: 'signup',
-				loadChildren: () =>
-					import('./signup/signup.module').then((m) => m.SignupModule)
-			},
-			{
-				path: 'signin',
-				loadChildren: () =>
-					import('./signin/signin.module').then((m) => m.SigninModule)
 			}
 		]
 	},
 	{
 		path: 'dashboard',
 		component: LayoutLoggedInComponent,
+		...canActivate(() => redirectUnauthorizedTo(['/signin'])),
 		children: [
 			{
 				path: '',
