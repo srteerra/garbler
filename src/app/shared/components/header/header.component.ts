@@ -15,11 +15,11 @@ import {
 		trigger('inOutAnimation', [
 			transition(':enter', [
 				style({ width: 0, opacity: 0 }),
-				animate('0.5s ease-out', style({ width: 500, opacity: 1 }))
+				animate('0.1s ease-out', style({ width: 1000, opacity: 1 }))
 			]),
 			transition(':leave', [
-				style({ width: 500, opacity: 1 }),
-				animate('0.2s ease-in', style({ width: 0, opacity: 0 }))
+				style({ width: 1000, opacity: 1 }),
+				animate('0.1s ease-in', style({ width: 0, opacity: 0 }))
 			])
 		])
 	]

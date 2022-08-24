@@ -2,9 +2,9 @@
 	<div class="bg__aside"></div>
 
 	<div class="form__aside">
-		<form [formGroup]="FormSignup" (ngSubmit)="onSignup()">
+		<form [formGroup]="FormSignup" (ngSubmit)="onSignup()" autocomplete="off">
 			<div>
-				<a href="" class="formSignup__back"
+				<a href="/" class="formSignup__back"
 					><span
 						><mat-icon
 							aria-hidden="false"
@@ -25,7 +25,19 @@
 					placeholder="Enter your email here"
 					class="formSignup__input form-control"
 					formControlName="email"
+					autocomplete="off"
 				/>
+				<mat-error *ngIf="FormSignup.get('email')?.errors?.['required']"
+					>Email required</mat-error
+				>
+				<mat-error
+					*ngIf="FormSignup.get('email')?.errors?.['FormSignupUserInvalidEmail']"
+					>Please enter a valid email</mat-error
+				>
+				<mat-error
+					*ngIf="FormSignup.get('email')?.errors?.['FormSignupUserAlreadyExists']"
+					>Email already in use</mat-error
+				>
 			</mat-form-field>
 			<mat-form-field appearance="outline" class="formSignup__field">
 				<mat-label>Password</mat-label>
@@ -35,13 +47,27 @@
 					class="formSignup__input form-control"
 					type="password"
 					formControlName="password"
+					autocomplete="off"
 				/>
+				<mat-error *ngIf="FormSignup.get('password')?.errors?.['required']"
+					>Password required</mat-error
+				>
 			</mat-form-field>
 			<div style="padding-bottom: 30px; opacity: 50%">
 				<i><small>Do not trust your credentials to enyone</small></i>
 			</div>
 			<div class="formSignup__button">
 				<button mat-raised-button color="primary" type="submit">Sign up</button>
+			</div>
+			<div class="formSignin__google">
+				<button mat-stroked-button (click)="onSigninWithGoogle()">
+					<img src="../../../../assets/logos/google-icon.png" alt="" />
+					Sign up with Google
+				</button>
+			</div>
+			<div style="margin: 10px 0">
+				<span>Already have an account? </span>
+				<a href="/signin">Log in</a>
 			</div>
 			<div class="formSignup__logo">
 				<img

@@ -6,11 +6,13 @@ import { LayoutLoggedInComponent } from './layout-logged-in/layout-logged-in.com
 import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 import { MainDashboardViewComponent } from './main-dashboard/component/main-dashboard-view/main-dashboard-view.component';
 import { MainDashboardModule } from './main-dashboard/main-dashboard.module';
+import { LoggedInService } from './services/logged-in.service';
 
 const routes: Routes = [
 	{
 		path: '',
 		component: LayoutComponent,
+		canActivate: [LoggedInService],
 		children: [
 			{
 				path: '',
@@ -69,11 +71,13 @@ const routes: Routes = [
 	},
 	{
 		path: 'signup',
+		canActivate: [LoggedInService],
 		loadChildren: () =>
 			import('./signup/signup.module').then((m) => m.SignupModule)
 	},
 	{
 		path: 'signin',
+		canActivate: [LoggedInService],
 		loadChildren: () =>
 			import('./signin/signin.module').then((m) => m.SigninModule)
 	},
