@@ -26,79 +26,130 @@
 			>
 				<div class="list">
 					<div>
-						<a routerLink="/dashboard/home" class="mat-h3"
-							><p data-aos="fade-right" data-aos-duration="1000">Home</p></a
+						<a
+							routerLink="/dashboard/home"
+							class="navside__link"
+							data-aos="fade-right"
+							data-aos-duration="1000"
 						>
-						<a routerLink="/dashboard/tracker"
-							><p
-								class="mat-h3"
-								data-aos="fade-right"
-								data-aos-duration="1000"
-								data-aos-delay="600"
-							>
+							<mat-icon
+								aria-hidden="false"
+								aria-label="Example home icon"
+								fontIcon="home"
+							></mat-icon>
+							<p class="mat-h3" style="margin: 0; padding-left: 10px">
+								Home
+							</p></a
+						>
+						<a
+							routerLink="/dashboard/tracker"
+							class="navside__link"
+							data-aos="fade-right"
+							data-aos-duration="1000"
+							data-aos-delay="600"
+							><mat-icon
+								aria-hidden="false"
+								aria-label="Example home icon"
+								fontIcon="local_shipping"
+							></mat-icon>
+							<p class="mat-h3" style="margin: 0; padding-left: 10px">
 								Tracker
 							</p></a
 						>
-						<a routerLink="/dashboard/district"
-							><p
-								class="mat-h3"
-								data-aos="fade-right"
-								data-aos-duration="1000"
-								data-aos-delay="700"
-							>
+						<a
+							routerLink="/dashboard/district"
+							class="navside__link"
+							data-aos="fade-right"
+							data-aos-duration="1000"
+							data-aos-delay="700"
+							><mat-icon
+								aria-hidden="false"
+								aria-label="Example home icon"
+								fontIcon="location_on"
+							></mat-icon>
+							<p class="mat-h3" style="margin: 0; padding-left: 10px">
 								My district
 							</p></a
 						>
-						<a href="/"
-							><p
-								class="mat-h3"
-								data-aos="fade-right"
-								data-aos-duration="1000"
-								data-aos-delay="800"
-							>
-								Sevices
+						<a
+							href="/"
+							class="navside__link"
+							data-aos="fade-right"
+							data-aos-duration="1000"
+							data-aos-delay="800"
+							><mat-icon
+								aria-hidden="false"
+								aria-label="Example home icon"
+								fontIcon="sync_alt"
+							></mat-icon>
+							<p class="mat-h3" style="margin: 0; padding-left: 10px">
+								Services
 							</p></a
 						>
 					</div>
-					<div style="width: 90%; margin: 0 auto">
-						<a href="/"
-							><p
-								class="mat-h3"
-								data-aos="fade-right"
-								data-aos-duration="1000"
-								data-aos-delay="900"
-							>
+					<div style="width: 90%; margin: 0 auto; text-align: center">
+						<a
+							href="/"
+							class="navside__link"
+							data-aos="fade-right"
+							data-aos-duration="1000"
+							data-aos-delay="900"
+						>
+							<mat-icon
+								aria-hidden="false"
+								aria-label="Example home icon"
+								fontIcon="settings"
+							></mat-icon>
+							<p class="mat-h3" style="margin: 0; padding-left: 10px">
 								Settings
 							</p></a
 						>
-						<a href="/"
-							><p
-								class="mat-h3"
-								data-aos="fade-right"
-								data-aos-duration="1000"
-								data-aos-delay="1000"
-							>
+						<a
+							href="/"
+							class="navside__link"
+							data-aos="fade-right"
+							data-aos-duration="1000"
+							data-aos-delay="1000"
+						>
+							<mat-icon
+								aria-hidden="false"
+								aria-label="Example home icon"
+								fontIcon="devices"
+							></mat-icon>
+							<p class="mat-h3" style="margin: 0; padding-left: 10px">
 								Integrations
 							</p></a
 						>
-						<a href="/"
-							><p
-								class="mat-h3"
-								data-aos="fade-right"
-								data-aos-duration="1000"
-								data-aos-delay="1100"
-							>
+						<a
+							href="/"
+							class="navside__link"
+							data-aos="fade-right"
+							data-aos-duration="1000"
+							data-aos-delay="1100"
+							><mat-icon
+								aria-hidden="false"
+								aria-label="Example home icon"
+								fontIcon="help"
+							></mat-icon>
+							<p class="mat-h3" style="margin: 0; padding-left: 10px">
 								Help & Support
 							</p></a
 						>
-						<hr />
-						<a (click)="tlogout()"
-							><p
-								class="mat-h3"
-								data-aos="fade-right"
-								data-aos-duration="1000"
-								data-aos-delay="1200"
-							>
+						<hr style="width: 70%" />
+						<a
+							(click)="tlogout()"
+							class="navside__link"
+							data-aos="fade-right"
+							data-aos-duration="1000"
+							data-aos-delay="1200"
+							style="margin: 20px 0"
+						>
+							<mat-icon
+								aria-hidden="false"
+								aria-label="Example home icon"
+								fontIcon="logout"
+							></mat-icon>
+							<p class="mat-h3" style="margin: 0; padding-left: 10px">
 								Log Out
 							</p></a
 						>
@@ -118,9 +169,14 @@
 					<div class="profile" data-aos="fade-left">
 						<div class="userName">
 							<p class="mat-h4" ngModel="userName">{{ userName }}</p>
-							<p ngModel="userDistrict">{{ userDistrict }}</p>
+							<p ngModel="userDistrict" style="opacity: 50%">
+								{{ userDistrict }}
+							</p>
 						</div>
-						<img src="../../../../assets/vectors/step1.png" alt="userImage" />
+						<img
+							src="../../../../assets/placeholder__avatar.png"
+							alt="userImage"
+						/>
 					</div>
 				</div>
 				<router-outlet></router-outlet>
@@ -128,7 +184,10 @@
 					data-aos="fade-left"
 					class="sendEmail"
 					routerLink="/dashboard/contact"
-					><img src="../../../../assets/vectors/email.png" alt="send"
+					><img
+						src="../../../../assets/vectors/email.png"
+						alt="send"
+						style="max-width: 25px"
 				/></a>
 			</div>
 		</mat-sidenav-content>

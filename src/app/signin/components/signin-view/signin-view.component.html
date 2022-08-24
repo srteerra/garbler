@@ -2,9 +2,9 @@
 	<div class="bg__aside"></div>
 
 	<div class="form__aside">
-		<form [formGroup]="FormLogin" (ngSubmit)="onSignin()">
+		<form [formGroup]="FormLogin" autocomplete="off">
 			<div>
-				<a href="" class="formSignin__back"
+				<a href="/" class="formSignin__back"
 					><span
 						><mat-icon
 							aria-hidden="false"
@@ -25,7 +25,12 @@
 					placeholder="Enter your email here"
 					class="formSignin__input form-control"
 					formControlName="email"
+					autocomplete="off"
 				/>
+				<mat-error
+					*ngIf="FormLogin.get('email')?.errors?.['FormLoginUserNotFound']"
+					>Incorrect email address</mat-error
+				>
 			</mat-form-field>
 			<mat-form-field appearance="outline" class="formSignin__field">
 				<mat-label>Password</mat-label>
@@ -35,13 +40,30 @@
 					class="formSignin__input form-control"
 					type="password"
 					formControlName="password"
+					autocomplete="off"
 				/>
+				<mat-error
+					*ngIf="FormLogin.get('password')?.errors?.['FormLoginUserIncorrectPassword']"
+					>Incorrect password</mat-error
+				>
 			</mat-form-field>
 			<div style="padding-bottom: 30px; opacity: 50%">
 				<i><small>Do not trust your credentials to enyone</small></i>
 			</div>
 			<div class="formSignin__button">
-				<button mat-raised-button color="primary">Sign in</button>
+				<button mat-raised-button color="primary" (click)="onSignin()">
+					Sign in
+				</button>
+			</div>
+			<div class="formSignin__google">
+				<button mat-stroked-button (click)="onSigninWithGoogle()">
+					<img src="../../../../assets/logos/google-icon.png" alt="" />
+					Sign in with Google
+				</button>
+			</div>
+			<div style="margin: 10px 0">
+				<span>Don't have an account yet? </span>
+				<a href="/signup">Register</a>
 			</div>
 			<div class="formSignin__logo">
 				<img

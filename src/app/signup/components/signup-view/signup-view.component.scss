@@ -67,6 +67,7 @@
 
 		.formSignup__field {
 			width: 100%;
+			margin: 10px 0;
 
 			.formSignup__input {
 				width: 100%;
@@ -78,6 +79,22 @@
 
 			button {
 				width: 100%;
+				padding: 5px 0;
+			}
+		}
+
+		.formSignin__google {
+			width: 100%;
+			margin-top: 10px;
+
+			button {
+				width: 100%;
+				padding: 5px 0;
+
+				img {
+					max-width: 25px;
+					padding-right: 5px;
+				}
 			}
 		}
 

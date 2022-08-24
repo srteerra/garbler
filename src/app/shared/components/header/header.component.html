@@ -10,20 +10,40 @@
 				<h1><strong>Menu</strong></h1>
 			</div>
 			<div class="row navMenu__links">
-				<a routerLink="/home" routerLinkActive="active" class="header-link"
-					><h1>Home</h1></a
-				>
-				<a routerLink="/about" routerLinkActive="active" class="header-link"
-					><h1>About us</h1></a
-				>
-				<a routerLink="/contact" routerLinkActive="active" class="header-link"
-					><h1>Contact</h1></a
-				>
-				<a routerLink="/contact" class="header-link navMenu__button"
+				<div style="margin: 20px 0">
+					<a
+						(click)="showNavMenu()"
+						routerLink="/home"
+						routerLinkActive="active"
+						class="header-link"
+						><h2>Home</h2></a
+					>
+					<a
+						(click)="showNavMenu()"
+						routerLink="/about"
+						routerLinkActive="active"
+						class="header-link"
+						><h2>About us</h2></a
+					>
+					<a
+						(click)="showNavMenu()"
+						routerLink="/contact"
+						routerLinkActive="active"
+						class="header-link"
+						><h2>Contact</h2></a
+					>
+				</div>
+				<a
+					(click)="showNavMenu()"
+					routerLink="/signup"
+					class="header-link navMenu__button"
 					><strong>Join us!</strong></a
 				>
-				<a routerLink="/contact" class="header-link"
-					><h3>or just <span class="navMenu__signIn">Sign in</span></h3></a
+				<a
+					(click)="showNavMenu()"
+					routerLink="/signin"
+					class="header-link navMenu__signIn"
+					><strong>Sign in</strong></a
 				>
 			</div>
 			<div class="row bottom-xs center-xs">
@@ -80,7 +100,8 @@
 				<a
 					routerLink="/signup"
 					routerLinkActive="active"
-					id="primary__button"
+					id="primary__button__Hoverstroked"
+					style="padding: 20px 50px"
 					class="header-link"
 					><strong>Join us!</strong></a
 				>
