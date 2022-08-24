@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoggedInService } from 'src/app/services/logged-in.service';
 import { FirebaseService } from '../../../services/firebase.service';
 
 @Component({
@@ -13,6 +14,7 @@ export class SignupViewComponent implements OnInit {
 
 	constructor(
 		private firebaseService: FirebaseService,
+		private loggedInService: LoggedInService,
 		private router: Router
 	) {
 		// this.FormSignup = this.fb.group({
@@ -36,6 +38,13 @@ export class SignupViewComponent implements OnInit {
 			.signup(this.FormSignup.value)
 			.then((res) => {
 				console.log(res);
+
+				if (res.user) {
+					this.loggedInService.setCurrentUser(res.user.email || '');
+				} else {
+					console.log('not response');
+				}
+
 				this.router.navigate(['/dashboard']);
 			})
 			.catch((err) => {
@@ -59,6 +68,13 @@ export class SignupViewComponent implements OnInit {
 			.signinGoogle()
 			.then((res) => {
 				console.log(res);
+
+				if (res.user) {
+					this.loggedInService.setCurrentUser(res.user.email || '');
+				} else {
+					console.log('not response');
+				}
+
 				this.router.navigate(['/dashboard']);
 			})
 			.catch((err) => console.log(err));
